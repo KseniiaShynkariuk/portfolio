@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>МИРА | Салон красоты — авторское портфолио</title>
-  <!-- Шрифты и иконки Font Awesome -->
+  <title>МИРА | Салон красоты в центре</title>
+  <!-- Шрифты и иконки -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -198,45 +198,22 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
-    
-    /* Стилизованные блоки вместо реальных фото */
     .hero-img {
       border-radius: 200px 200px 80px 80px;
       overflow: hidden;
       box-shadow: 0 25px 40px -12px rgba(70, 40, 30, 0.25);
       background: #e5d6cf;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      color: #5e3a2e;
-      transition: all 0.4s;
-      position: relative;
-      border: 2px solid #f0e0d6;
     }
-    
-    .hero-img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 30px 50px -15px #9b7b6b;
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s;
+      display: block;
     }
-    
-    .hero-img i {
-      font-size: 4rem;
-      color: #a67b64;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 10px rgba(166,123,100,0.3);
+    .hero-img:hover img {
+      transform: scale(1.05);
     }
-    
-    .hero-img span {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      font-weight: 500;
-      background: rgba(255,255,240,0.5);
-      padding: 5px 20px;
-      border-radius: 40px;
-      backdrop-filter: blur(2px);
-    }
-    
     .hero-img:first-child {
       grid-row: span 2;
       aspect-ratio: 3/4;
@@ -314,7 +291,7 @@
       padding-top: 15px;
     }
 
-    /* ===== ПОРТФОЛИО (стилизованные работы) ===== */
+    /* ===== ПОРТФОЛИО ===== */
     .portfolio {
       padding: 100px 0;
       background: #fcf9f7;
@@ -331,63 +308,26 @@
       overflow: hidden;
       aspect-ratio: 1/1.2;
       box-shadow: 0 15px 25px -8px rgba(0,0,0,0.1);
-      background: #e5d6cf;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      transition: 0.5s;
-      border: 1px solid #dccbbf;
     }
-    
-    .portfolio-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 35px -12px #9b7b6b;
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s;
     }
-    
-    .portfolio-icon {
-      font-size: 4rem;
-      color: #a67b64;
-      margin-bottom: 15px;
-      transition: 0.3s;
+    .portfolio-item:hover img {
+      transform: scale(1.07);
     }
-    
-    .portfolio-item:hover .portfolio-icon {
-      transform: scale(1.1);
-      color: #7b5644;
-    }
-    
-    .portfolio-label {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: #412f27;
-      background: rgba(255,250,240,0.7);
-      padding: 8px 25px;
-      border-radius: 40px;
-      backdrop-filter: blur(4px);
-    }
-    
-    .portfolio-desc {
-      margin-top: 10px;
-      font-size: 1rem;
-      color: #3f2e26;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-    }
-    
     .overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(80, 50, 35, 0.85));
+      background: linear-gradient(transparent, rgba(80, 50, 35, 0.8));
       color: white;
       padding: 30px 20px 20px;
       transform: translateY(100%);
       transition: transform 0.4s;
-      z-index: 2;
-      text-align: center;
     }
     .portfolio-item:hover .overlay {
       transform: translateY(0);
@@ -416,29 +356,12 @@
       border-radius: 250px 250px 100px 100px;
       overflow: hidden;
       box-shadow: 0 30px 40px -15px #997b6e;
-      background: #e5d6cf;
-      aspect-ratio: 1/1.1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
     }
-    
-    .about-img i {
-      font-size: 6rem;
-      color: #a67b64;
-      margin-bottom: 20px;
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
-    
-    .about-img p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      color: #5e3a2e;
-      background: rgba(255,245,235,0.6);
-      padding: 10px 30px;
-      border-radius: 60px;
-    }
-    
     .about h2 {
       font-size: 3rem;
       margin-bottom: 25px;
@@ -562,14 +485,10 @@
         </div>
       </div>
       <div class="hero-gallery">
-        <div class="hero-img hidden">
-          <i class="fas fa-umbrella-beach"></i>
-          <span>легкость</span>
-        </div>
-        <div class="hero-img hidden">
-          <i class="fas fa-feather-alt"></i>
-          <span>нежность</span>
-        </div>
+        <!-- ВАШЕ ФОТО №1: Атмосфера салона -->
+        <div class="hero-img hidden"><img src="https://share.google/b1uLxnqRurteuRh70" alt="Атмосфера салона"></div>
+        <!-- ВАШЕ ФОТО №2: Интерьер / зона ожидания -->
+        <div class="hero-img hidden"><img src="https://share.google/NpzQouSpLFaIBXseU" alt="Интерьер салона"></div>
       </div>
     </div>
   </section>
@@ -614,35 +533,20 @@
       <h2 class="section-title hidden">Вдохновение и работы</h2>
       <p class="section-desc hidden">Более 500 счастливых клиентов и ещё больше фото</p>
       <div class="portfolio-grid">
-        <!-- Портфолио 1: Свадебная прическа -->
+        <!-- ВАШЕ ФОТО №3: Свадебная прическа -->
         <div class="portfolio-item hidden">
-          <i class="fas fa-crown portfolio-icon"></i>
-          <span class="portfolio-label">Невеста</span>
-          <span class="portfolio-desc">свадебная укладка</span>
-          <div class="overlay">
-            <h4>Невеста</h4>
-            <p>Свадебная укладка с цветами</p>
-          </div>
+          <img src="https://share.google/T64MsbGWGiYruzzJq" alt="Свадебная прическа">
+          <div class="overlay"><h4>Невеста</h4><p>Свадебная укладка</p></div>
         </div>
-        <!-- Портфолио 2: Окрашивание AirTouch -->
+        <!-- ВАШЕ ФОТО №4: Окрашивание AirTouch -->
         <div class="portfolio-item hidden">
-          <i class="fas fa-wind portfolio-icon"></i>
-          <span class="portfolio-label">AirTouch</span>
-          <span class="portfolio-desc">плавное выгорание</span>
-          <div class="overlay">
-            <h4>AirTouch</h4>
-            <p>Плавное выгорание, эффект поцелованных солнцем волос</p>
-          </div>
+          <img src="https://share.google/VxiCfJ0hLlbJkGuMW" alt="Окрашивание AirTouch">
+          <div class="overlay"><h4>AirTouch</h4><p>Плавное выгорание</p></div>
         </div>
-        <!-- Портфолио 3: Макияж Smoky eyes -->
+        <!-- ВАШЕ ФОТО №5: Макияж Smoky eyes -->
         <div class="portfolio-item hidden">
-          <i class="fas fa-eye portfolio-icon"></i>
-          <span class="portfolio-label">Smoky eyes</span>
-          <span class="portfolio-desc">вечерний образ</span>
-          <div class="overlay">
-            <h4>Smoky eyes</h4>
-            <p>Вечерний макияж с эффектом дымки</p>
-          </div>
+          <img src="https://share.google/CNb4yL9b35547deZ1" alt="Макияж Smoky eyes">
+          <div class="overlay"><h4>Smoky eyes</h4><p>Вечерний образ</p></div>
         </div>
       </div>
     </div>
@@ -650,9 +554,9 @@
 
   <section id="about" class="about">
     <div class="container">
+      <!-- ВАШЕ ФОТО №6: Команда салона -->
       <div class="about-img hidden">
-        <i class="fas fa-tree"></i>
-        <p>интерьер</p>
+        <img src="https://share.google/lKgZslWyfSuLEHKEM" alt="Команда салона МИРА">
       </div>
       <div class="hidden">
         <p class="section-tag">—— о пространстве ——</p>
@@ -691,7 +595,7 @@
         </div>
       </div>
       <div style="text-align: center; margin-top: 50px;">
-        <button class="btn-primary" onclick="alert('Спасибо, мы свяжемся с вами в ближайшее время!')">Записаться онлайн</button>
+        <button class="btn-primary" onclick="alert('Спасибо, мы свяжемся с вами в течение 15 минут!')">Записаться онлайн</button>
       </div>
     </div>
   </section>
