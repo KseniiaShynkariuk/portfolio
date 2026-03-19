@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>МИРА | Салон красоты в центре</title>
-  <!-- Шрифты и иконки -->
+  <title>МИРА | Салон красоты — авторское портфолио</title>
+  <!-- Шрифты и иконки Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -198,36 +198,45 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
+    
+    /* Стилизованные блоки вместо реальных фото */
     .hero-img {
       border-radius: 200px 200px 80px 80px;
       overflow: hidden;
       box-shadow: 0 25px 40px -12px rgba(70, 40, 30, 0.25);
       background: #e5d6cf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #5e3a2e;
+      transition: all 0.4s;
       position: relative;
+      border: 2px solid #f0e0d6;
     }
-    .hero-img::before {
-      content: "✨";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3rem;
+    
+    .hero-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 30px 50px -15px #9b7b6b;
+    }
+    
+    .hero-img i {
+      font-size: 4rem;
       color: #a67b64;
-      opacity: 0.3;
-      z-index: 0;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 10px rgba(166,123,100,0.3);
     }
-    .hero-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s;
-      display: block;
-      position: relative;
-      z-index: 1;
+    
+    .hero-img span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      background: rgba(255,255,240,0.5);
+      padding: 5px 20px;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
     }
-    .hero-img:hover img {
-      transform: scale(1.05);
-    }
+    
     .hero-img:first-child {
       grid-row: span 2;
       aspect-ratio: 3/4;
@@ -235,20 +244,6 @@
     .hero-img:last-child {
       grid-column: 2;
       aspect-ratio: 1/1.3;
-    }
-
-    /* Заглушки для изображений */
-    .hero-img img:not([src]), .hero-img img[src=""], .hero-img img[src="#"] {
-      opacity: 0;
-    }
-    
-    /* Цветные заглушки с иконками, если изображения не загрузятся */
-    .hero-img {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #b2826b;
-      font-size: 2rem;
     }
 
     /* ===== УСЛУГИ ===== */
@@ -319,7 +314,7 @@
       padding-top: 15px;
     }
 
-    /* ===== ПОРТФОЛИО ===== */
+    /* ===== ПОРТФОЛИО (стилизованные работы) ===== */
     .portfolio {
       padding: 100px 0;
       background: #fcf9f7;
@@ -340,35 +335,59 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+      transition: 0.5s;
+      border: 1px solid #dccbbf;
     }
-    .portfolio-item::before {
-      content: "🖼️";
-      font-size: 3rem;
+    
+    .portfolio-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 35px -12px #9b7b6b;
+    }
+    
+    .portfolio-icon {
+      font-size: 4rem;
       color: #a67b64;
-      opacity: 0.3;
+      margin-bottom: 15px;
+      transition: 0.3s;
     }
-    .portfolio-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s;
-      position: relative;
-      z-index: 1;
+    
+    .portfolio-item:hover .portfolio-icon {
+      transform: scale(1.1);
+      color: #7b5644;
     }
-    .portfolio-item:hover img {
-      transform: scale(1.07);
+    
+    .portfolio-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #412f27;
+      background: rgba(255,250,240,0.7);
+      padding: 8px 25px;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
     }
+    
+    .portfolio-desc {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #3f2e26;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    
     .overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(transparent, rgba(80, 50, 35, 0.8));
+      background: linear-gradient(transparent, rgba(80, 50, 35, 0.85));
       color: white;
       padding: 30px 20px 20px;
       transform: translateY(100%);
       transition: transform 0.4s;
       z-index: 2;
+      text-align: center;
     }
     .portfolio-item:hover .overlay {
       transform: translateY(0);
@@ -402,19 +421,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
-    .about-img::before {
-      content: "🏠";
-      font-size: 4rem;
+    
+    .about-img i {
+      font-size: 6rem;
       color: #a67b64;
-      opacity: 0.3;
+      margin-bottom: 20px;
     }
-    .about-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    
+    .about-img p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: #5e3a2e;
+      background: rgba(255,245,235,0.6);
+      padding: 10px 30px;
+      border-radius: 60px;
     }
+    
     .about h2 {
       font-size: 3rem;
       margin-bottom: 25px;
@@ -539,10 +563,12 @@
       </div>
       <div class="hero-gallery">
         <div class="hero-img hidden">
-          <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="укладка волос" onerror="this.style.opacity='0'; this.parentElement.style.background='#e5d6cf'; this.parentElement.innerHTML += '<span style=\'position:absolute; color:#b2826b;\'>💇‍♀️</span>'">
+          <i class="fas fa-umbrella-beach"></i>
+          <span>легкость</span>
         </div>
         <div class="hero-img hidden">
-          <img src="https://images.pexels.com/photos/6629882/pexels-photo-6629882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="макияж" onerror="this.style.opacity='0'; this.parentElement.style.background='#e5d6cf'; this.parentElement.innerHTML += '<span style=\'position:absolute; color:#b2826b;\'>💄</span>'">
+          <i class="fas fa-feather-alt"></i>
+          <span>нежность</span>
         </div>
       </div>
     </div>
@@ -588,17 +614,35 @@
       <h2 class="section-title hidden">Вдохновение и работы</h2>
       <p class="section-desc hidden">Более 500 счастливых клиентов и ещё больше фото</p>
       <div class="portfolio-grid">
+        <!-- Портфолио 1: Свадебная прическа -->
         <div class="portfolio-item hidden">
-          <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="прическа" onerror="this.style.opacity='0'; this.parentElement.innerHTML += '<span style=\'position:absolute; z-index:3; color:#b2826b; font-size:2rem;\'>👰</span>'">
-          <div class="overlay"><h4>Невеста</h4><p>Свадебная укладка</p></div>
+          <i class="fas fa-crown portfolio-icon"></i>
+          <span class="portfolio-label">Невеста</span>
+          <span class="portfolio-desc">свадебная укладка</span>
+          <div class="overlay">
+            <h4>Невеста</h4>
+            <p>Свадебная укладка с цветами</p>
+          </div>
         </div>
+        <!-- Портфолио 2: Окрашивание AirTouch -->
         <div class="portfolio-item hidden">
-          <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="окрашивание" onerror="this.style.opacity='0'; this.parentElement.innerHTML += '<span style=\'position:absolute; z-index:3; color:#b2826b; font-size:2rem;\'>🎨</span>'">
-          <div class="overlay"><h4>AirTouch</h4><p>Плавное выгорание</p></div>
+          <i class="fas fa-wind portfolio-icon"></i>
+          <span class="portfolio-label">AirTouch</span>
+          <span class="portfolio-desc">плавное выгорание</span>
+          <div class="overlay">
+            <h4>AirTouch</h4>
+            <p>Плавное выгорание, эффект поцелованных солнцем волос</p>
+          </div>
         </div>
+        <!-- Портфолио 3: Макияж Smoky eyes -->
         <div class="portfolio-item hidden">
-          <img src="https://images.pexels.com/photos/6629882/pexels-photo-6629882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="макияж глаз" onerror="this.style.opacity='0'; this.parentElement.innerHTML += '<span style=\'position:absolute; z-index:3; color:#b2826b; font-size:2rem;\'>👁️</span>'">
-          <div class="overlay"><h4>Smoky eyes</h4><p>Вечерний образ</p></div>
+          <i class="fas fa-eye portfolio-icon"></i>
+          <span class="portfolio-label">Smoky eyes</span>
+          <span class="portfolio-desc">вечерний образ</span>
+          <div class="overlay">
+            <h4>Smoky eyes</h4>
+            <p>Вечерний макияж с эффектом дымки</p>
+          </div>
         </div>
       </div>
     </div>
@@ -607,7 +651,8 @@
   <section id="about" class="about">
     <div class="container">
       <div class="about-img hidden">
-        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Интерьер салона" onerror="this.style.opacity='0'; this.parentElement.innerHTML += '<span style=\'position:absolute; color:#b2826b; font-size:4rem;\'>🏛️</span>'">
+        <i class="fas fa-tree"></i>
+        <p>интерьер</p>
       </div>
       <div class="hidden">
         <p class="section-tag">—— о пространстве ——</p>
@@ -646,7 +691,7 @@
         </div>
       </div>
       <div style="text-align: center; margin-top: 50px;">
-        <button class="btn-primary" onclick="alert('Спасибо, мы свяжемся с вами в течение 15 минут!')">Записаться онлайн</button>
+        <button class="btn-primary" onclick="alert('Спасибо, мы свяжемся с вами в ближайшее время!')">Записаться онлайн</button>
       </div>
     </div>
   </section>
@@ -686,24 +731,6 @@
         const target = document.querySelector(targetId);
         if (target) {
           target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-
-    // Дополнительная обработка ошибок загрузки изображений
-    document.querySelectorAll('img').forEach(img => {
-      img.addEventListener('error', function() {
-        this.style.opacity = '0';
-        const parent = this.parentElement;
-        if (!parent.querySelector('.fallback-icon')) {
-          const icon = document.createElement('span');
-          icon.className = 'fallback-icon';
-          icon.style.position = 'absolute';
-          icon.style.color = '#b2826b';
-          icon.style.fontSize = '3rem';
-          icon.innerHTML = '🖼️';
-          parent.style.position = 'relative';
-          parent.appendChild(icon);
         }
       });
     });
