@@ -31,9 +31,9 @@
   .project a {display:inline-block; margin-top:10px; padding:5px 10px; background:#ff69b4; color:white; border-radius:5px;}
 
   /* Контакты */
-  .contact input, .contact textarea {width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc;}
-  .contact button {padding:10px 20px; background:#ff69b4; color:white; border:none; border-radius:5px; cursor:pointer;}
-  .contact button:hover {background:#ff1493;}
+  #contact ul {list-style:none; padding:0;}
+  #contact li {margin:10px 0;}
+  #contact a:hover {text-decoration:underline;}
 
   /* Кнопка наверх */
   #topBtn {position: fixed; bottom: 30px; right: 30px; display: none; padding: 10px 15px; background: #ff69b4; color:white; border:none; border-radius:50%; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.2);}
@@ -92,18 +92,18 @@
 
 <section id="contact">
   <h2>Контакты</h2>
-  <form class="contact" action="mailto:твояпочта@example.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Имя" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" rows="5" placeholder="Сообщение" required></textarea>
-    <button type="submit">Отправить</button>
-  </form>
+  <p>Связаться со мной можно через e-mail или социальные сети:</p>
+  <ul>
+    <li>Email: <a href="mailto:твояпочта@example.com">твояпочта@example.com</a></li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/твояссылка" target="_blank">linkedin.com/in/твояссылка</a></li>
+    <li>Instagram: <a href="https://www.instagram.com/твояссылка" target="_blank">@твояссылка</a></li>
+  </ul>
 </section>
 
 <button id="topBtn" onclick="scrollToTop()">↑</button>
 
 <script>
-  // Показ кнопки «Наверх»
+  // Показ кнопки «Наверх» и анимация элементов
   window.onscroll = function() {
     const btn = document.getElementById("topBtn");
     if(document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -112,7 +112,6 @@
       btn.style.display = "none";
     }
 
-    // Анимация появления элементов
     document.querySelectorAll('.skill, .project').forEach(el=>{
       const rect = el.getBoundingClientRect();
       if(rect.top < window.innerHeight - 50){
