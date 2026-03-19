@@ -203,6 +203,18 @@
       overflow: hidden;
       box-shadow: 0 25px 40px -12px rgba(70, 40, 30, 0.25);
       background: #e5d6cf;
+      position: relative;
+    }
+    .hero-img::before {
+      content: "✨";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      color: #a67b64;
+      opacity: 0.3;
+      z-index: 0;
     }
     .hero-img img {
       width: 100%;
@@ -210,6 +222,8 @@
       object-fit: cover;
       transition: transform 0.8s;
       display: block;
+      position: relative;
+      z-index: 1;
     }
     .hero-img:hover img {
       transform: scale(1.05);
@@ -221,6 +235,20 @@
     .hero-img:last-child {
       grid-column: 2;
       aspect-ratio: 1/1.3;
+    }
+
+    /* Заглушки для изображений */
+    .hero-img img:not([src]), .hero-img img[src=""], .hero-img img[src="#"] {
+      opacity: 0;
+    }
+    
+    /* Цветные заглушки с иконками, если изображения не загрузятся */
+    .hero-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #b2826b;
+      font-size: 2rem;
     }
 
     /* ===== УСЛУГИ ===== */
@@ -308,12 +336,24 @@
       overflow: hidden;
       aspect-ratio: 1/1.2;
       box-shadow: 0 15px 25px -8px rgba(0,0,0,0.1);
+      background: #e5d6cf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .portfolio-item::before {
+      content: "🖼️";
+      font-size: 3rem;
+      color: #a67b64;
+      opacity: 0.3;
     }
     .portfolio-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.7s;
+      position: relative;
+      z-index: 1;
     }
     .portfolio-item:hover img {
       transform: scale(1.07);
@@ -328,6 +368,7 @@
       padding: 30px 20px 20px;
       transform: translateY(100%);
       transition: transform 0.4s;
+      z-index: 2;
     }
     .portfolio-item:hover .overlay {
       transform: translateY(0);
@@ -356,10 +397,22 @@
       border-radius: 250px 250px 100px 100px;
       overflow: hidden;
       box-shadow: 0 30px 40px -15px #997b6e;
+      background: #e5d6cf;
+      aspect-ratio: 1/1.1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-img::before {
+      content: "🏠";
+      font-size: 4rem;
+      color: #a67b64;
+      opacity: 0.3;
     }
     .about-img img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
     .about h2 {
@@ -485,8 +538,12 @@
         </div>
       </div>
       <div class="hero-gallery">
-        <div class="hero-img hidden"><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&auto=format" alt="укладка волос"></div>
-        <div class="hero-img hidden"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&auto=format" alt="макияж"></div>
+        <div class="hero-img hidden">
+          <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="укладка волос" onerror="this.style.opacity='0'; this.parentElement.style.background='#e5d6cf'; this.parentElement.innerHTML += '<span style=\'position:absolute; color:#b2826b;\'>💇‍♀️</span>'">
+        </div>
+        <div class="hero-img hidden">
+          <img src="https://images.pexels.com/photos/6629882/pexels-photo-6629882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="макияж" onerror="this.style.opacity='0'; this.parentElement.style.background='#e5d6cf'; this.parentElement.innerHTML += '<span style=\'position:absolute; color:#b2826b;\'>💄</span>'">
+        </div>
       </div>
     </div>
   </section>
@@ -532,15 +589,15 @@
       <p class="section-desc hidden">Более 500 счастливых клиентов и ещё больше фото</p>
       <div class="portfolio-grid">
         <div class="portfolio-item hidden">
-          <img src="https://images.unsplash.com/photo-1605493625526-3d4f0217f425?w=600&auto=format" alt="прическа">
+          <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="прическа" onerror="this.style.opacity='0'; this.parentElement.innerHTML += '<span style=\'position:absolute; z-index:3; color:#b2826b; font-size:2rem;\'>👰</span>'">
           <div class="overlay"><h4>Невеста</h4><p>Свадебная укладка</p></div>
         </div>
         <div class="portfolio-item hidden">
-          <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4707?w=600&auto=format" alt="окрашивание">
+          <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600" alt="окрашивание" onerror="this.style.opacity='0'; this.parentElement.innerHTML += '<span style=\'position:absolute; z-index:3; color:#b2826b; font-size:2rem;\'>🎨</span>'">
           <div class="overlay"><h4>AirTouch</h4><p>Плавное выгорание</p></div>
         </div>
         <div class="portfolio-item hidden">
-          <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&auto=format" alt="макияж глаз">
+          <img src="https://images.pexels.com/photos/6629882/pexels-photo-6629882.jpeg?auto=compress&cs=tinysrgb&w=600" alt="макияж глаз" onerror="this.style.opacity='0'; this.parentElement.innerHTML += '<span style=\'position:absolute; z-index:3; color:#b2826b; font-size:2rem;\'>👁️</span>'">
           <div class="overlay"><h4>Smoky eyes</h4><p>Вечерний образ</p></div>
         </div>
       </div>
@@ -550,7 +607,7 @@
   <section id="about" class="about">
     <div class="container">
       <div class="about-img hidden">
-        <img src="https://images.unsplash.com/photo-1583001933989-65975cd48883?w=600&auto=format" alt="Интерьер салона">
+        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Интерьер салона" onerror="this.style.opacity='0'; this.parentElement.innerHTML += '<span style=\'position:absolute; color:#b2826b; font-size:4rem;\'>🏛️</span>'">
       </div>
       <div class="hidden">
         <p class="section-tag">—— о пространстве ——</p>
@@ -629,6 +686,24 @@
         const target = document.querySelector(targetId);
         if (target) {
           target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Дополнительная обработка ошибок загрузки изображений
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function() {
+        this.style.opacity = '0';
+        const parent = this.parentElement;
+        if (!parent.querySelector('.fallback-icon')) {
+          const icon = document.createElement('span');
+          icon.className = 'fallback-icon';
+          icon.style.position = 'absolute';
+          icon.style.color = '#b2826b';
+          icon.style.fontSize = '3rem';
+          icon.innerHTML = '🖼️';
+          parent.style.position = 'relative';
+          parent.appendChild(icon);
         }
       });
     });
