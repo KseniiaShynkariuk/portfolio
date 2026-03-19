@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Салон красоты "Гламур"</title>
+<style>
+/* Общие стили */
+body {margin:0; font-family: 'Arial', sans-serif; background:#fff; color:#333;}
+a {text-decoration:none; color:#ff69b4;}
+h1,h2,h3 {margin:0;}
+section {padding:50px 20px; max-width:1200px; margin:0 auto;}
+
+/* Хедер */
+header {background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); color:white; text-align:center; padding:60px 20px;}
+header h1 {font-size:3em; margin-bottom:10px;}
+header p {font-size:1.2em;}
+
+/* Навигация */
+nav {display:flex; justify-content:center; gap:30px; background:#ff69b4; padding:15px;}
+nav a {color:white; font-weight:bold; text-transform:uppercase; transition:0.3s;}
+nav a:hover {color:#fff7;}
+
+/* О нас */
+#about {text-align:center;}
+#about p {max-width:700px; margin:20px auto; line-height:1.6; font-size:1.1em;}
+
+/* Услуги */
+.services {display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:30px;}
+.service {flex:1 1 250px; background:#ffe4e1; border-radius:15px; overflow:hidden; text-align:center; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s;}
+.service img {width:100%; height:180px; object-fit:cover;}
+.service h3 {margin:15px 0 10px;}
+.service p {padding:0 15px 15px; line-height:1.4;}
+.service:hover {transform: translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+
+/* Контакты */
+#contact {background:#fce4ec; text-align:center; border-radius:15px; margin-top:40px; padding:40px 20px;}
+#contact p {margin:10px 0; font-size:1.1em;}
+#contact a {color:#d81b60; font-weight:bold;}
+
+/* Футер */
+footer {background:#ff9a9e; color:white; text-align:center; padding:20px; margin-top:30px;}
+
+/* Адаптив */
+@media(max-width:768px){.services{flex-direction:column; align-items:center;}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Салон красоты "Гламур"</h1>
+  <p>Стрижки, маникюр, уход за лицом и телом</p>
+</header>
+
+<nav>
+  <a href="#about">О нас</a>
+  <a href="#services">Услуги</a>
+  <a href="#contact">Контакты</a>
+</nav>
+
+<section id="about">
+  <h2>О нас</h2>
+  <p>Салон красоты "Гламур" предлагает профессиональные услуги по уходу за волосами, ногтями и кожей лица. Наши мастера обладают многолетним опытом и создают индивидуальные образы для каждого клиента.</p>
+</section>
+
+<section id="services">
+  <h2>Наши услуги</h2>
+  <div class="services">
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1597210038704-45b5e0b25f47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI3NzZ8MHwxfHNlYXJjaHwxfHxhaGFpcmR8ZW58MHx8fHwxNjg5Njg0Nzg3&ixlib=rb-4.0.3&q=80&w=400" alt="Стрижка">
+      <h3>Стрижка и укладка</h3>
+      <p>Современные и стильные стрижки для женщин и мужчин, создание образа под ваш стиль.</p>
+    </div>
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1580281658621-00f97f6c61f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Маникюр">
+      <h3>Маникюр и педикюр</h3>
+      <p>Красивые ногти с современным дизайном и ухоженные руки и ноги.</p>
+    </div>
+    <div class="service">
+      <img src="https://images.unsplash.com/photo-1617041959470-2e8395a9c9b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Уход за лицом">
+      <h3>Уход за лицом</h3>
+      <p>Косметические процедуры для сияющей кожи, чистка, маски и массаж лица.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Контакты</h2>
+  <p>Email: <a href="mailto:sestrushynkariuk@gmail.com">sestrushynkariuk@gmail.com</a></p>
+  <p>Телефон: +351 912 345 678</p>
+  <p>Адрес: Rua da Beleza 123, Лиссабон, Португалия</p>
+</section>
+
+<footer>
+  <p>© 2026 Салон красоты "Гламур"</p>
+</footer>
+
+</body>
+</html>
