@@ -1,112 +1,119 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>МИРА | Салон красоты</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>МИРА | Салон красоты</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-body {font-family:'Montserrat',sans-serif; margin:0; background:#fcf9f7; color:#333;}
+body {margin:0; font-family:'Montserrat',sans-serif; background:#fcf9f7; color:#333;}
 h1,h2,h3 {font-family:'Cormorant Garamond',serif;}
 
-.header {display:flex; justify-content:space-between; padding:20px 40px; background:#fff;}
-.logo {font-size:28px; font-weight:bold; text-decoration:none; color:#5e3a2e;}
+.container {max-width:1200px; margin:auto; padding:20px;}
 
-.hero {display:flex; flex-wrap:wrap; padding:50px;}
+header {display:flex; justify-content:space-between; align-items:center; padding:20px;}
+.logo {font-size:28px; font-weight:bold;}
+
+.hero {display:flex; flex-wrap:wrap; align-items:center; gap:40px;}
 .hero-text {flex:1;}
-.hero h1 {font-size:50px;}
-.hero-gallery {flex:1; display:grid; grid-template-columns:1fr 1fr; gap:10px;}
-.hero-gallery img {width:100%; border-radius:20px;}
+.hero h1 {font-size:48px;}
+.hero-gallery {flex:1; display:grid; grid-template-columns:1fr 1fr; gap:15px;}
+.hero-gallery img {width:100%; border-radius:20px; height:300px; object-fit:cover;}
 
-.section {padding:60px 40px;}
+.section {padding:60px 0;}
 .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
 
 .card {background:white; padding:20px; border-radius:15px; text-align:center;}
-.card img {width:100%; border-radius:10px;}
+.card img {width:100%; border-radius:10px; height:200px; object-fit:cover;}
 
-.btn {background:#a67b64; color:white; padding:10px 20px; border:none; border-radius:20px; cursor:pointer;}
+button {background:#a67b64; color:white; padding:10px 20px; border:none; border-radius:20px;}
 
-.footer {text-align:center; padding:30px; background:#2d241f; color:white;}
+.footer {background:#2d241f; color:white; text-align:center; padding:30px;}
 </style>
 </head>
 
 <body>
 
-<header class="header">
-  <a href="#" class="logo">МИРА</a>
+<header class="container">
+<div class="logo">МИРА</div>
 </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>Искусство быть собой</h1>
-    <p>Премиальный салон красоты с уникальным стилем</p>
-    <button class="btn">Записаться</button>
-  </div>
+<section class="container hero">
+<div class="hero-text">
+<h1>Искусство быть собой</h1>
+<p>Премиальный салон красоты, где стиль встречается с профессионализмом</p>
+<button>Записаться</button>
+</div>
 
-  <div class="hero-gallery">
-    <img src="https://images.unsplash.com/photo-1595475038665-8b5b8b0d5b63?w=800">
-    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800">
-  </div>
+<div class="hero-gallery">
+<img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=800" alt="укладка волос">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800" alt="макияж">
+</div>
 </section>
 
-<section class="section">
-  <h2>Услуги</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Стрижка</h3>
-      <p>Современные техники</p>
-      <p><b>25€</b></p>
-    </div>
-    <div class="card">
-      <h3>Окрашивание</h3>
-      <p>Профессиональный подход</p>
-      <p><b>50€</b></p>
-    </div>
-    <div class="card">
-      <h3>Макияж</h3>
-      <p>Для любого события</p>
-      <p><b>35€</b></p>
-    </div>
-  </div>
+<section class="container section">
+<h2>Услуги</h2>
+<div class="grid">
+<div class="card">
+<h3>Стрижка</h3>
+<p>Современные техники для любого типа волос</p>
+<p><b>25€</b></p>
+</div>
+
+<div class="card">
+<h3>Окрашивание</h3>
+<p>Плавные переходы и сложные техники</p>
+<p><b>50€</b></p>
+</div>
+
+<div class="card">
+<h3>Макияж</h3>
+<p>Дневной, вечерний и свадебный</p>
+<p><b>35€</b></p>
+</div>
+</div>
 </section>
 
-<section class="section">
-  <h2>Наши работы</h2>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=800">
-      <p>Прическа</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=800">
-      <p>Окрашивание</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800">
-      <p>Макияж</p>
-    </div>
-  </div>
+<section class="container section">
+<h2>Наши работы</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800" alt="свадебная прическа">
+<p>Свадебная укладка</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1605493625526-3d4f0217f425?w=800" alt="окрашивание волос">
+<p>Окрашивание AirTouch</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800" alt="макияж">
+<p>Вечерний макияж</p>
+</div>
+
+</div>
 </section>
 
-<section class="section">
-  <h2>О нас</h2>
-  <div class="grid">
-    <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=800">
-    <p>Мы создаем красоту и уверенность. Наш салон — это сочетание стиля, комфорта и профессионализма.</p>
-  </div>
+<section class="container section">
+<h2>О нас</h2>
+<div class="grid">
+<img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800" style="border-radius:20px;">
+<p>Мы создаем пространство, где каждая девушка чувствует себя уверенно и красиво. Наш салон сочетает стиль, комфорт и высокий уровень сервиса.</p>
+</div>
 </section>
 
-<section class="section">
-  <h2>Контакты</h2>
-  <p>Email: salon@email.com</p>
-  <p>Телефон: +351 900 000 000</p>
+<section class="container section">
+<h2>Контакты</h2>
+<p>Email: salon@email.com</p>
+<p>Телефон: +351 900 000 000</p>
 </section>
 
 <footer class="footer">
-  <p>© 2025 Салон МИРА</p>
+<p>© 2025 Салон МИРА</p>
 </footer>
 
 </body>
