@@ -1,233 +1,593 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lista de Tarefas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Flow Tasks | Organize suas tarefas</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-:root {
-  --cor-principal: #ff69b4;
-  --cor-fundo: #f5f5f5;
-  --cor-card: #ffffff;
-  --cor-texto: #333;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f2f1 0%, #c8e6e9 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      transition: all 0.3s ease;
+    }
 
-body.dark {
-  --cor-fundo: #1e1e1e;
-  --cor-card: #2c2c2c;
-  --cor-texto: #eee;
-}
+    body.dark {
+      background: linear-gradient(135deg, #1a2c2e 0%, #1e3a3a 100%);
+    }
 
-body {
-  font-family: Arial, sans-serif;
-  background: var(--cor-fundo);
-  color: var(--cor-texto);
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  transition: 0.3s;
-}
+    /* Container principal */
+    .todo-container {
+      max-width: 550px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-radius: 48px;
+      padding: 32px;
+      box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s;
+      border: 1px solid rgba(74, 157, 157, 0.2);
+    }
 
-.container {
-  background: var(--cor-card);
-  padding: 20px;
-  border-radius: 15px;
-  width: 350px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
+    body.dark .todo-container {
+      background: rgba(30, 45, 45, 0.95);
+      border-color: rgba(95, 163, 163, 0.3);
+    }
 
-h2 {
-  text-align: center;
-}
+    /* Header */
+    .todo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
 
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #4a9d9d, #6b9b8b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-input, button {
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
-}
+    h1 i {
+      background: none;
+      color: #4a9d9d;
+      font-size: 1.8rem;
+    }
 
-input {
-  width: 65%;
-  border: 1px solid #ccc;
-}
+    .theme-toggle {
+      background: rgba(74, 157, 157, 0.15);
+      border: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.3rem;
+      transition: all 0.3s;
+      color: #4a9d9d;
+    }
 
-button {
-  background: var(--cor-principal);
-  color: white;
-  cursor: pointer;
-}
+    .theme-toggle:hover {
+      background: #4a9d9d;
+      color: white;
+      transform: rotate(15deg);
+    }
 
-ul {
-  padding: 0;
-  margin-top: 15px;
-}
+    /* Área de adicionar tarefa */
+    .add-task-area {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
 
-li {
-  list-style: none;
-  background: #eee;
-  margin-top: 8px;
-  padding: 8px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .task-input {
+      flex: 1;
+      padding: 16px 20px;
+      border: 2px solid #e2e8f0;
+      border-radius: 60px;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s;
+      background: white;
+    }
 
-body.dark li {
-  background: #444;
-}
+    body.dark .task-input {
+      background: #2d3e3e;
+      border-color: #4a6b6b;
+      color: #e0e0e0;
+    }
 
-.concluida {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
+    .task-input:focus {
+      outline: none;
+      border-color: #4a9d9d;
+      box-shadow: 0 0 0 3px rgba(74, 157, 157, 0.2);
+    }
 
-.actions button {
-  margin-left: 5px;
-  font-size: 12px;
-  padding: 4px 6px;
-}
+    .add-btn {
+      background: linear-gradient(135deg, #4a9d9d, #5f9b8b);
+      border: none;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.footer {
-  margin-top: 15px;
-  font-size: 14px;
-  text-align: center;
-}
-</style>
+    .add-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(74, 157, 157, 0.4);
+    }
+
+    /* Barra de pesquisa */
+    .search-area {
+      margin-bottom: 24px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #f1f5f9;
+      border-radius: 60px;
+      padding: 4px 20px;
+      transition: all 0.3s;
+    }
+
+    body.dark .search-box {
+      background: #2d3e3e;
+    }
+
+    .search-box i {
+      color: #8b9d9d;
+      font-size: 1rem;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 14px 12px;
+      border: none;
+      background: transparent;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      color: inherit;
+    }
+
+    /* Estatísticas */
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 12px 0;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    body.dark .stats {
+      border-bottom-color: #3e5a5a;
+    }
+
+    .stats-info {
+      display: flex;
+      gap: 20px;
+    }
+
+    .stat-badge {
+      background: rgba(74, 157, 157, 0.15);
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #4a9d9d;
+    }
+
+    .clear-btn {
+      background: transparent;
+      border: 1px solid #dc9e82;
+      color: #b2826b;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .clear-btn:hover {
+      background: #b2826b;
+      color: white;
+      border-color: #b2826b;
+    }
+
+    /* Lista de tarefas */
+    .task-list {
+      list-style: none;
+      max-height: 450px;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
+
+    .task-list::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .task-list::-webkit-scrollbar-track {
+      background: #e2e8f0;
+      border-radius: 10px;
+    }
+
+    .task-list::-webkit-scrollbar-thumb {
+      background: #4a9d9d;
+      border-radius: 10px;
+    }
+
+    .task-item {
+      background: #f8fafc;
+      margin-bottom: 12px;
+      padding: 16px 20px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s;
+      border: 1px solid #e2e8f0;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    body.dark .task-item {
+      background: #2a4040;
+      border-color: #3e5e5e;
+    }
+
+    .task-item:hover {
+      transform: translateX(5px);
+      border-color: #4a9d9d;
+    }
+
+    .task-content {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .task-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #cbd5e1;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    body.dark .task-check {
+      background: #2d3e3e;
+      border-color: #5f8b8b;
+    }
+
+    .task-check.completed {
+      background: #4a9d9d;
+      border-color: #4a9d9d;
+      color: white;
+    }
+
+    .task-check i {
+      font-size: 0.7rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .task-check.completed i {
+      opacity: 1;
+    }
+
+    .task-text {
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.2s;
+      word-break: break-word;
+    }
+
+    .task-text.completed {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+
+    .task-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .task-btn {
+      background: transparent;
+      border: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    .task-btn:hover {
+      background: rgba(74, 157, 157, 0.2);
+      color: #4a9d9d;
+      transform: scale(1.05);
+    }
+
+    .task-btn.delete:hover {
+      color: #e87979;
+      background: rgba(232, 121, 121, 0.1);
+    }
+
+    /* Mensagem vazia */
+    .empty-message {
+      text-align: center;
+      padding: 50px 20px;
+      color: #8b9d9d;
+    }
+
+    .empty-message i {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      opacity: 0.5;
+    }
+
+    /* Responsivo */
+    @media (max-width: 500px) {
+      .todo-container {
+        padding: 24px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      .task-item {
+        padding: 12px 16px;
+      }
+      .stats-info {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="container">
-  <h2>📋 Minhas Tarefas</h2>
-
-  <div class="top-bar">
-    <input type="text" id="taskInput" placeholder="Nova tarefa...">
-    <button onclick="addTask()">+</button>
+<div class="todo-container">
+  <div class="todo-header">
+    <h1>
+      <i class="fas fa-tasks"></i>
+      Flow Tasks
+    </h1>
+    <button class="theme-toggle" onclick="toggleDarkMode()">
+      <i class="fas fa-moon"></i>
+    </button>
   </div>
 
-  <div class="top-bar">
-    <input type="text" id="searchInput" placeholder="Pesquisar..." onkeyup="searchTask()">
-    <button onclick="toggleDarkMode()">🌙</button>
+  <div class="add-task-area">
+    <input type="text" id="taskInput" class="task-input" placeholder="Nova tarefa... ✍️" onkeypress="handleKeyPress(event)">
+    <button class="add-btn" onclick="addTask()">
+      <i class="fas fa-plus"></i>
+    </button>
   </div>
 
-  <ul id="taskList"></ul>
-
-  <div class="footer">
-    <p id="contador"></p>
-    <button onclick="clearAll()">Limpar tudo</button>
+  <div class="search-area">
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar tarefas..." onkeyup="searchTask()">
+    </div>
   </div>
+
+  <div class="stats">
+    <div class="stats-info">
+      <span class="stat-badge" id="totalCount">Total: 0</span>
+      <span class="stat-badge" id="completedCount">Concluídas: 0</span>
+    </div>
+    <button class="clear-btn" onclick="clearAll()">
+      <i class="fas fa-trash-alt"></i> Limpar tudo
+    </button>
+  </div>
+
+  <ul class="task-list" id="taskList"></ul>
 </div>
 
 <script>
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-function saveTasks() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
+  function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
 
-function renderTasks(list = tasks) {
-  const ul = document.getElementById("taskList");
-  ul.innerHTML = "";
+  function renderTasks(filteredTasks = null) {
+    const list = document.getElementById("taskList");
+    const searchTerm = document.getElementById("searchInput")?.value.toLowerCase() || "";
+    let tasksToRender = filteredTasks !== null ? filteredTasks : tasks;
+    
+    if (searchTerm && filteredTasks === null) {
+      tasksToRender = tasks.filter(t => t.text.toLowerCase().includes(searchTerm));
+    }
+    
+    list.innerHTML = "";
+    
+    if (tasksToRender.length === 0) {
+      list.innerHTML = `
+        <div class="empty-message">
+          <i class="fas fa-clipboard-list"></i>
+          <p>✨ Nenhuma tarefa por aqui</p>
+          <small>Adicione sua primeira tarefa acima</small>
+        </div>
+      `;
+    } else {
+      tasksToRender.forEach((task, idx) => {
+        const originalIndex = tasks.findIndex(t => t === task);
+        const li = document.createElement("li");
+        li.className = "task-item";
+        
+        li.innerHTML = `
+          <div class="task-content" onclick="toggleDone(${originalIndex})">
+            <div class="task-check ${task.done ? 'completed' : ''}">
+              <i class="fas fa-check"></i>
+            </div>
+            <span class="task-text ${task.done ? 'completed' : ''}">${escapeHtml(task.text)}</span>
+          </div>
+          <div class="task-actions">
+            <button class="task-btn edit" onclick="editTask(${originalIndex}); event.stopPropagation();">
+              <i class="fas fa-pencil-alt"></i>
+            </button>
+            <button class="task-btn delete" onclick="deleteTask(${originalIndex}); event.stopPropagation();">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        `;
+        
+        list.appendChild(li);
+      });
+    }
+    
+    updateStats();
+  }
 
-  list.forEach((task, index) => {
-    let li = document.createElement("li");
-    li.className = task.done ? "concluida" : "";
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
 
-    let span = document.createElement("span");
-    span.textContent = task.text;
-    span.onclick = () => toggleDone(index);
-
-    let actions = document.createElement("div");
-    actions.className = "actions";
-
-    let editBtn = document.createElement("button");
-    editBtn.textContent = "✏️";
-    editBtn.onclick = () => editTask(index);
-
-    let deleteBtn = document.createElement("button");
-    deleteBtn.textContent = "🗑";
-    deleteBtn.onclick = () => deleteTask(index);
-
-    actions.appendChild(editBtn);
-    actions.appendChild(deleteBtn);
-
-    li.appendChild(span);
-    li.appendChild(actions);
-
-    ul.appendChild(li);
-  });
-
-  updateCounter();
-}
-
-function addTask() {
-  let input = document.getElementById("taskInput");
-  let text = input.value.trim();
-
-  if (!text) return;
-
-  tasks.push({ text: text, done: false });
-  input.value = "";
-
-  saveTasks();
-  renderTasks();
-}
-
-function deleteTask(index) {
-  tasks.splice(index, 1);
-  saveTasks();
-  renderTasks();
-}
-
-function toggleDone(index) {
-  tasks[index].done = !tasks[index].done;
-  saveTasks();
-  renderTasks();
-}
-
-function editTask(index) {
-  let newText = prompt("Editar tarefa:", tasks[index].text);
-  if (newText) {
-    tasks[index].text = newText;
+  function addTask() {
+    const input = document.getElementById("taskInput");
+    const text = input.value.trim();
+    
+    if (!text) {
+      alert("Por favor, digite uma tarefa!");
+      return;
+    }
+    
+    tasks.unshift({ text: text, done: false });
+    input.value = "";
     saveTasks();
     renderTasks();
   }
-}
 
-function clearAll() {
-  if (confirm("Tem certeza?")) {
-    tasks = [];
+  function deleteTask(index) {
+    if (confirm("Remover esta tarefa?")) {
+      tasks.splice(index, 1);
+      saveTasks();
+      renderTasks();
+    }
+  }
+
+  function toggleDone(index) {
+    tasks[index].done = !tasks[index].done;
     saveTasks();
     renderTasks();
   }
-}
 
-function updateCounter() {
-  let total = tasks.length;
-  let done = tasks.filter(t => t.done).length;
-  document.getElementById("contador").textContent =
-    `Total: ${total} | Concluídas: ${done}`;
-}
+  function editTask(index) {
+    const newText = prompt("Editar tarefa:", tasks[index].text);
+    if (newText && newText.trim()) {
+      tasks[index].text = newText.trim();
+      saveTasks();
+      renderTasks();
+    }
+  }
 
-function toggleDarkMode() {
-  document.body.classList.toggle("dark");
-}
+  function clearAll() {
+    if (confirm("⚠️ Tem certeza? Todas as tarefas serão apagadas permanentemente.")) {
+      tasks = [];
+      saveTasks();
+      renderTasks();
+    }
+  }
 
-function searchTask() {
-  let value = document.getElementById("searchInput").value.toLowerCase();
-  let filtered = tasks.filter(t => t.text.toLowerCase().includes(value));
-  renderTasks(filtered);
-}
+  function updateStats() {
+    const total = tasks.length;
+    const completed = tasks.filter(t => t.done).length;
+    document.getElementById("totalCount").innerHTML = `Total: ${total}`;
+    document.getElementById("completedCount").innerHTML = `Concluídas: ${completed}`;
+  }
 
-renderTasks();
+  function searchTask() {
+    const term = document.getElementById("searchInput").value.toLowerCase();
+    if (term === "") {
+      renderTasks();
+    } else {
+      const filtered = tasks.filter(t => t.text.toLowerCase().includes(term));
+      renderTasks(filtered);
+    }
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      addTask();
+    }
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+    const icon = document.querySelector(".theme-toggle i");
+    if (document.body.classList.contains("dark")) {
+      icon.className = "fas fa-sun";
+    } else {
+      icon.className = "fas fa-moon";
+    }
+  }
+
+  // Carregar tema escuro salvo
+  if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark");
+    const icon = document.querySelector(".theme-toggle i");
+    if (icon) icon.className = "fas fa-sun";
+  }
+
+  // Salvar tema ao alternar
+  const originalToggle = toggleDarkMode;
+  window.toggleDarkMode = function() {
+    originalToggle();
+    localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+  };
+
+  renderTasks();
 </script>
 
 </body>
