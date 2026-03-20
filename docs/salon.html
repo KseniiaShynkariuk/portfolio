@@ -1,91 +1,113 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мое портфолио</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>МИРА | Салон красоты</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
-body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; color:#333;}
-a {text-decoration:none; color:#ff69b4;}
-h2 {color:#ff69b4;}
+body {font-family:'Montserrat',sans-serif; margin:0; background:#fcf9f7; color:#333;}
+h1,h2,h3 {font-family:'Cormorant Garamond',serif;}
 
-header {background:#ffb6c1; color:white; text-align:center; padding:50px 20px;}
-header h1 {margin:0; font-size:2.5em;}
-header p {margin:10px 0 0; font-size:1.2em;}
+.header {display:flex; justify-content:space-between; padding:20px 40px; background:#fff;}
+.logo {font-size:28px; font-weight:bold; text-decoration:none; color:#5e3a2e;}
 
-section {padding:50px 20px; max-width:1000px; margin:0 auto;}
+.hero {display:flex; flex-wrap:wrap; padding:50px;}
+.hero-text {flex:1;}
+.hero h1 {font-size:50px;}
+.hero-gallery {flex:1; display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+.hero-gallery img {width:100%; border-radius:20px;}
 
-.skills {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px;}
-.skill {background:white; padding:20px 30px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); flex:1 1 150px; text-align:center;}
-.skill img {width:40px; margin-bottom:10px;}
+.section {padding:60px 40px;}
+.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
 
-.projects {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
-.project {background:white; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); width:280px; text-align:center;}
-.project img {width:100%; border-radius:5px; margin-bottom:10px;}
-.project a {display:inline-block; margin-top:10px; padding:5px 10px; background:#ff69b4; color:white; border-radius:5px;}
+.card {background:white; padding:20px; border-radius:15px; text-align:center;}
+.card img {width:100%; border-radius:10px;}
 
-#contact ul {list-style:none; padding:0;}
-#contact li {margin:10px 0;}
+.btn {background:#a67b64; color:white; padding:10px 20px; border:none; border-radius:20px; cursor:pointer;}
 
-@media(max-width:600px){
-  .skills, .projects {flex-direction:column; align-items:center;}
-  .skill, .project {width:90%;}
-}
+.footer {text-align:center; padding:30px; background:#2d241f; color:white;}
 </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Привет! Я начинающий разработчик 💻</h1>
-  <p>Python | HTML | CSS | JS | Figma</p>
+<header class="header">
+  <a href="#" class="logo">МИРА</a>
 </header>
 
-<section id="skills">
-  <h2>Навыки</h2>
-  <div class="skills">
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><br>Python</div>
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><br>HTML</div>
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><br>CSS</div>
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"><br>JavaScript</div>
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"><br>Figma</div>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Искусство быть собой</h1>
+    <p>Премиальный салон красоты с уникальным стилем</p>
+    <button class="btn">Записаться</button>
+  </div>
+
+  <div class="hero-gallery">
+    <img src="https://images.unsplash.com/photo-1595475038665-8b5b8b0d5b63?w=800">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800">
   </div>
 </section>
 
-<section id="projects">
-  <h2>Проекты</h2>
-  <div class="projects">
-    
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800" alt="Салон красоты">
-      <h3>Сайт салона красоты</h3>
-      <p>Красивый адаптивный лендинг с современным дизайном.</p>
-      <a href="salon.html" target="_blank">Посмотреть</a>
+<section class="section">
+  <h2>Услуги</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Стрижка</h3>
+      <p>Современные техники</p>
+      <p><b>25€</b></p>
     </div>
-
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=800" alt="To-Do App">
-      <h3>To-Do App</h3>
-      <p>Приложение на JavaScript для управления задачами.</p>
-      <a href="#">Посмотреть</a>
+    <div class="card">
+      <h3>Окрашивание</h3>
+      <p>Профессиональный подход</p>
+      <p><b>50€</b></p>
     </div>
-
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800" alt="Python проект">
-      <h3>Python проект</h3>
-      <p>Telegram-бот или мини-скрипт.</p>
-      <a href="#">Посмотреть</a>
+    <div class="card">
+      <h3>Макияж</h3>
+      <p>Для любого события</p>
+      <p><b>35€</b></p>
     </div>
-
   </div>
 </section>
 
-<section id="contact">
+<section class="section">
+  <h2>Наши работы</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=800">
+      <p>Прическа</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=800">
+      <p>Окрашивание</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800">
+      <p>Макияж</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>О нас</h2>
+  <div class="grid">
+    <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=800">
+    <p>Мы создаем красоту и уверенность. Наш салон — это сочетание стиля, комфорта и профессионализма.</p>
+  </div>
+</section>
+
+<section class="section">
   <h2>Контакты</h2>
-  <p>Связаться со мной можно через e-mail:</p>
-  <ul>
-    <li>Email: <a href="mailto:sestrushynkariuk@gmail.com">sestrushynkariuk@gmail.com</a></li>
-  </ul>
+  <p>Email: salon@email.com</p>
+  <p>Телефон: +351 900 000 000</p>
 </section>
+
+<footer class="footer">
+  <p>© 2025 Салон МИРА</p>
+</footer>
 
 </body>
 </html>
