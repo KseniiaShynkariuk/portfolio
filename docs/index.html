@@ -1,91 +1,500 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мое портфолио</title>
-<style>
-body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; color:#333;}
-a {text-decoration:none; color:#ff69b4;}
-h2 {color:#ff69b4;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Ксения Шинкарюк | Портфолио — Веб-разработка и дизайн</title>
+  <!-- Google Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-header {background:#ffb6c1; color:white; text-align:center; padding:50px 20px;}
-header h1 {margin:0; font-size:2.5em;}
-header p {margin:10px 0 0; font-size:1.2em;}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fefefe;
+      color: #1a1a1f;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
 
-section {padding:50px 20px; max-width:1000px; margin:0 auto;}
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f0f0f0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #d4a5b5;
+      border-radius: 8px;
+    }
 
-.skills {display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px;}
-.skill {background:white; padding:20px 30px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); flex:1 1 150px; text-align:center;}
-.skill img {width:40px; margin-bottom:10px;}
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
 
-.projects {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
-.project {background:white; padding:20px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); width:280px; text-align:center;}
-.project img {width:100%; border-radius:5px; margin-bottom:10px;}
-.project a {display:inline-block; margin-top:10px; padding:5px 10px; background:#ff69b4; color:white; border-radius:5px;}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
 
-#contact ul {list-style:none; padding:0;}
-#contact li {margin:10px 0;}
+    /* ===== ХЕДЕР ===== */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(135deg, #fff5f7 0%, #fef2e8 100%);
+      border-bottom: 1px solid rgba(212, 165, 181, 0.2);
+    }
 
-@media(max-width:600px){
-  .skills, .projects {flex-direction:column; align-items:center;}
-  .skill, .project {width:90%;}
-}
-</style>
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(212, 165, 181, 0.2);
+      backdrop-filter: blur(4px);
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #b4627a;
+      margin-bottom: 24px;
+      border: 0.5px solid rgba(180, 98, 122, 0.3);
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #1e1a1f;
+    }
+    .hero-content h1 span {
+      background: linear-gradient(125deg, #d48ba5, #b46a84);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero-desc {
+      font-size: 1.15rem;
+      color: #4a4046;
+      max-width: 520px;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #b4627a;
+      border: none;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 48px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.25s;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 18px rgba(180, 98, 122, 0.25);
+    }
+    .btn-primary:hover {
+      background: #9e4e68;
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px rgba(158, 78, 104, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #d4a5b5;
+      color: #5e3a44;
+      padding: 12px 28px;
+      border-radius: 48px;
+      font-weight: 500;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-outline:hover {
+      background: rgba(212, 165, 181, 0.15);
+      border-color: #b4627a;
+    }
+
+    .hero-visual {
+      flex: 0.9;
+      background: #fae9ef;
+      border-radius: 48px 48px 48px 24px;
+      overflow: hidden;
+      box-shadow: 0 35px 45px -20px rgba(90, 50, 60, 0.3);
+    }
+    .hero-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .hero-visual:hover img {
+      transform: scale(1.02);
+    }
+
+    /* ===== НАВЫКИ ===== */
+    .skills-section {
+      padding: 80px 0;
+      background: #ffffff;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 600;
+      color: #b46a84;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 48px;
+      color: #1e1a1f;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+    }
+    .skill-card {
+      background: #fefafc;
+      border-radius: 32px;
+      padding: 28px 24px;
+      width: 160px;
+      text-align: center;
+      transition: all 0.25s;
+      border: 1px solid #f3e3e9;
+      box-shadow: 0 6px 12px -8px rgba(0,0,0,0.05);
+    }
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: #e8cdd7;
+      box-shadow: 0 22px 28px -18px rgba(110, 70, 80, 0.2);
+    }
+    .skill-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      color: #b4627a;
+    }
+    .skill-card h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .skill-card p {
+      font-size: 0.8rem;
+      color: #6f5a64;
+    }
+
+    /* ===== ПРОЕКТЫ ===== */
+    .projects-section {
+      padding: 80px 0;
+      background: #fef8fa;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 36px;
+      overflow: hidden;
+      transition: all 0.35s;
+      box-shadow: 0 12px 24px -14px rgba(0,0,0,0.08);
+      border: 1px solid #f1dfe6;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 35px -18px rgba(100, 60, 70, 0.2);
+      border-color: #d9b7c5;
+    }
+    .project-img {
+      height: 220px;
+      overflow: hidden;
+    }
+    .project-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .project-card:hover .project-img img {
+      transform: scale(1.04);
+    }
+    .project-info {
+      padding: 24px 22px 28px;
+    }
+    .project-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .project-info p {
+      color: #4f3f47;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+    .project-link {
+      font-weight: 600;
+      text-decoration: none;
+      color: #b4627a;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1.5px solid transparent;
+      transition: 0.2s;
+    }
+    .project-link:hover {
+      gap: 12px;
+      border-bottom-color: #d48ba5;
+    }
+
+    /* ===== КОНТАКТЫ ===== */
+    .contact-section {
+      padding: 70px 0 90px;
+      background: #fffafc;
+      text-align: center;
+    }
+    .contact-card {
+      max-width: 560px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 56px;
+      padding: 48px 32px;
+      box-shadow: 0 30px 40px -20px rgba(120, 70, 80, 0.18);
+      border: 1px solid #f0dfe6;
+    }
+    .contact-icon {
+      font-size: 2.8rem;
+      color: #b4627a;
+      margin-bottom: 16px;
+    }
+    .contact-card h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .email-big {
+      font-size: 1.3rem;
+      font-weight: 500;
+      background: #fef2f6;
+      display: inline-block;
+      padding: 12px 32px;
+      border-radius: 80px;
+      margin: 24px 0 12px;
+      word-break: break-all;
+    }
+    .email-big a {
+      color: #b4627a;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .social-row {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+    }
+    .social-row a {
+      color: #a56a81;
+      font-size: 1.7rem;
+      transition: 0.2s;
+    }
+    .social-row a:hover {
+      color: #b4627a;
+      transform: scale(1.05);
+    }
+
+    /* ===== ФУТЕР ===== */
+    .footer {
+      background: #1e1a1f;
+      color: #cab7c1;
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 780px) {
+      .hero-grid { flex-direction: column-reverse; text-align: center; }
+      .hero-content { text-align: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .btn-group { justify-content: center; }
+      .skills-grid { gap: 18px; }
+      .skill-card { width: 140px; padding: 20px 16px; }
+    }
+    @media (max-width: 500px) {
+      .container { padding: 0 20px; }
+      .contact-card { padding: 32px 20px; }
+      .email-big { font-size: 1rem; padding: 8px 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Привет! Я начинающий разработчик 💻</h1>
-  <p>Python | HTML | CSS | JS | Figma</p>
-</header>
+  <!-- ГЛАВНЫЙ ЭКРАН -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">✦ ПОРТФОЛИО 2025 ✦</div>
+        <h1>Ксения Шинкарюк<br><span>Дизайн и код</span> с душой</h1>
+        <p class="hero-desc">Создаю современные веб-интерфейсы, лендинги и креативные проекты. Внимание к деталям и эстетике — моя философия.</p>
+        <div class="btn-group">
+          <a href="#projects" class="btn-primary"><i class="fas fa-arrow-down"></i> Мои проекты</a>
+          <a href="#contact" class="btn-outline"><i class="far fa-comment"></i> Написать мне</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.pexels.com/photos/3768130/pexels-photo-3768130.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Рабочий процесс Ксении">
+      </div>
+    </div>
+  </section>
 
-<section id="skills">
-  <h2>Навыки</h2>
-  <div class="skills">
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><br>Python</div>
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><br>HTML</div>
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><br>CSS</div>
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"><br>JavaScript</div>
-    <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"><br>Figma</div>
-  </div>
-</section>
+  <!-- НАВЫКИ -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-label">// Технологии & инструменты</div>
+      <h2 class="section-title">Что я использую</h2>
+      <div class="skills-grid">
+        <div class="skill-card"><div class="skill-icon"><i class="fab fa-python"></i></div><h4>Python</h4><p>Автоматизация, боты, backend</p></div>
+        <div class="skill-card"><div class="skill-icon"><i class="fab fa-html5"></i></div><h4>HTML5</h4><p>Семантика, доступность</p></div>
+        <div class="skill-card"><div class="skill-icon"><i class="fab fa-css3-alt"></i></div><h4>CSS3</h4><p>Flex/Grid, адаптив, анимации</p></div>
+        <div class="skill-card"><div class="skill-icon"><i class="fab fa-js"></i></div><h4>JavaScript</h4><p>Интерактивность, DOM</p></div>
+        <div class="skill-card"><div class="skill-icon"><i class="fab fa-figma"></i></div><h4>Figma</h4><p>Прототипы, дизайн-системы</p></div>
+      </div>
+    </div>
+  </section>
 
-<section id="projects">
-  <h2>Проекты</h2>
-  <div class="projects">
+  <!-- ПРОЕКТЫ -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-label">// Избранные работы</div>
+      <h2 class="section-title">Мои проекты</h2>
+      <div class="projects-grid">
+        <!-- Проект 1: Салон красоты -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Сайт салона красоты">
+          </div>
+          <div class="project-info">
+            <h3>MIRA Beauty</h3>
+            <p>Премиальный лендинг для салона красоты. Адаптивный дизайн, плавные анимации, портфолио и форма записи.</p>
+            <a href="salon.html" class="project-link" target="_blank">Посмотреть сайт →</a>
+          </div>
+        </div>
+
+        <!-- Проект 2: To-Do App -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://images.pexels.com/photos/4065892/pexels-photo-4065892.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Приложение задач">
+          </div>
+          <div class="project-info">
+            <h3>Flow Tasks</h3>
+            <p>Интерактивное To-Do приложение на чистом JS. Добавление, удаление, сохранение в localStorage.</p>
+            <a href="#" class="project-link" id="todoDemoLink">Демо версия →</a>
+          </div>
+        </div>
+
+        <!-- Проект 3: Telegram-бот -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Python проект">
+          </div>
+          <div class="project-info">
+            <h3>EcoBot</h3>
+            <p>Телеграм-бот для эко-привычек (Python + aiogram). Напоминания, трекинг и полезные советы.</p>
+            <a href="#" class="project-link" id="pythonDemoLink">Подробнее →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- КОНТАКТЫ -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-icon"><i class="far fa-envelope"></i></div>
+        <h2>Давайте создадим что-то особенное</h2>
+        <p>Пишите мне по любым вопросам — обсудим идеи, фриланс или сотрудничество</p>
+        <div class="email-big">
+          📧 <a href="mailto:sestrushynkariuk@gmail.com">sestrushynkariuk@gmail.com</a>
+        </div>
+        <div class="social-row">
+          <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Ксения Шинкарюк — разработка и дизайн. Сделано с вниманием к деталям.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Демо-оповещения для To-Do App и Python бота
+    const todoLink = document.getElementById('todoDemoLink');
+    const pythonLink = document.getElementById('pythonDemoLink');
     
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800" alt="Салон красоты">
-      <h3>Сайт салона красоты</h3>
-      <p>Красивый адаптивный лендинг с современным дизайном.</p>
-      <a href="salon.html" target="_blank">Посмотреть</a>
-    </div>
+    if(todoLink) {
+      todoLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('✨ Демо-версия приложения To-Do скоро будет доступна! Следите за обновлениями.\n(HTML/CSS/JS трекер задач в разработке)');
+      });
+    }
+    if(pythonLink) {
+      pythonLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🤖 Python-бот для экопомощника — код можно посмотреть по запросу. Напишите мне, и я поделюсь репозиторием!');
+      });
+    }
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?q=80&w=800" alt="To-Do App">
-      <h3>To-Do App</h3>
-      <p>Приложение на JavaScript для управления задачами.</p>
-      <a href="#">Посмотреть</a>
-    </div>
-
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800" alt="Python проект">
-      <h3>Python проект</h3>
-      <p>Telegram-бот или мини-скрипт.</p>
-      <a href="#">Посмотреть</a>
-    </div>
-
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Контакты</h2>
-  <p>Связаться со мной можно через e-mail:</p>
-  <ul>
-    <li>Email: <a href="mailto:sestrushynkariuk@gmail.com">sestrushynkariuk@gmail.com</a></li>
-  </ul>
-</section>
-
+    // плавный скролл для всех якорных ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
