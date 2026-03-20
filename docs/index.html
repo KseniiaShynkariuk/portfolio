@@ -283,7 +283,7 @@
       color: #368282;
     }
 
-    /* ===== КОНТАКТЫ ===== */
+    /* ===== КОНТАКТЫ (только почта и телефон) ===== */
     .contact-section {
       padding: 70px 0 90px;
       background: #eef6f3;
@@ -310,39 +310,45 @@
     }
     .contact-card p {
       color: #5e7e76;
+      margin-bottom: 8px;
     }
-    .email-big {
-      font-size: 1.3rem;
-      font-weight: 500;
-      background: #f0f9f6;
-      display: inline-block;
-      padding: 12px 32px;
-      border-radius: 80px;
-      margin: 24px 0 12px;
-      word-break: break-all;
+    .contact-details {
+      margin: 28px 0 0;
     }
-    .email-big a {
-      color: #4a9d9d;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .email-big a:hover {
-      color: #2c7a7a;
-    }
-    .social-row {
+    .contact-item {
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 32px;
-      margin-top: 28px;
+      gap: 12px;
+      margin: 16px 0;
+      padding: 12px 20px;
+      background: #f0f9f6;
+      border-radius: 60px;
+      transition: all 0.2s;
     }
-    .social-row a {
-      color: #7fa89e;
-      font-size: 1.7rem;
-      transition: 0.2s;
+    .contact-item:hover {
+      background: #e6f2ef;
+      transform: translateY(-2px);
     }
-    .social-row a:hover {
+    .contact-item i {
+      font-size: 1.3rem;
       color: #4a9d9d;
-      transform: scale(1.05);
+      width: 32px;
+    }
+    .contact-item a {
+      text-decoration: none;
+      color: #2c5a5a;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    .contact-item a:hover {
+      color: #368282;
+    }
+    .contact-item span {
+      color: #2c5a5a;
+      font-weight: 500;
+      font-size: 1.1rem;
     }
 
     /* ===== ФУТЕР ===== */
@@ -361,11 +367,13 @@
       .btn-group { justify-content: center; }
       .skills-grid { gap: 18px; }
       .skill-card { width: 140px; padding: 20px 16px; }
+      .contact-item { margin: 12px 0; padding: 10px 16px; }
+      .contact-item a, .contact-item span { font-size: 0.95rem; }
     }
     @media (max-width: 500px) {
       .container { padding: 0 20px; }
       .contact-card { padding: 32px 20px; }
-      .email-big { font-size: 1rem; padding: 8px 20px; }
+      .contact-item { flex-wrap: wrap; gap: 8px; }
     }
   </style>
 </head>
@@ -384,8 +392,8 @@
         </div>
       </div>
       <div class="hero-visual">
-        <!-- ВАШЕ ФОТО imagem_5.jpeg -->
-        <img src="imagem_5.jpeg" alt="Ксения Шинкарюк — веб-разработчик и дизайнер">
+        <!-- ВАШЕ ФОТО imagem_5.jfif -->
+        <img src="imagem_5.jfif" alt="Ксения Шинкарюк — веб-разработчик и дизайнер">
       </div>
     </div>
   </section>
@@ -450,21 +458,22 @@
     </div>
   </section>
 
-  <!-- КОНТАКТЫ -->
+  <!-- КОНТАКТЫ (только почта и телефон) -->
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="contact-card">
         <div class="contact-icon"><i class="far fa-envelope"></i></div>
         <h2>Давайте создадим что-то особенное</h2>
-        <p>Пишите мне по любым вопросам — обсудим идеи, фриланс или сотрудничество</p>
-        <div class="email-big">
-          📧 <a href="mailto:sestrushynkariuk@gmail.com">sestrushynkariuk@gmail.com</a>
-        </div>
-        <div class="social-row">
-          <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <p>Пишите или звоните — обсудим идеи, фриланс или сотрудничество</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:sestrushynkariuk@gmail.com">sestrushynkariuk@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:+351936888657">+351 936 888 657</a>
+          </div>
         </div>
       </div>
     </div>
