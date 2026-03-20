@@ -17,7 +17,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #e9eef2 0%, #dfe4e8 100%);
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdef5 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -34,8 +34,8 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle at 20% 30%, rgba(139, 168, 158, 0.08) 0%, transparent 60%),
-                  radial-gradient(circle at 80% 70%, rgba(178, 130, 107, 0.05) 0%, transparent 60%);
+      background: radial-gradient(circle at 20% 30%, rgba(100, 150, 200, 0.1) 0%, transparent 60%),
+                  radial-gradient(circle at 80% 70%, rgba(70, 130, 200, 0.08) 0%, transparent 60%);
       pointer-events: none;
     }
 
@@ -52,14 +52,14 @@
     .todo-container {
       max-width: 620px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       border-radius: 48px;
       padding: 40px;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 
-                  inset 0 1px 0 rgba(255, 255, 255, 0.6);
+                  inset 0 1px 0 rgba(255, 255, 255, 0.8);
       transition: all 0.4s ease;
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.6);
       position: relative;
       z-index: 1;
     }
@@ -84,7 +84,7 @@
     h1 {
       font-size: 2rem;
       font-weight: 700;
-      background: linear-gradient(135deg, #5f7e72, #9b7a64);
+      background: linear-gradient(135deg, #2c6e9e, #5a9bc2);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -102,7 +102,7 @@
     }
 
     h1 i {
-      background: linear-gradient(135deg, #6f9a8a, #b2826b);
+      background: linear-gradient(135deg, #2c6e9e, #5a9bc2);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -110,7 +110,7 @@
     }
 
     .theme-toggle {
-      background: rgba(139, 168, 158, 0.15);
+      background: rgba(44, 110, 158, 0.12);
       border: none;
       width: 48px;
       height: 48px;
@@ -118,7 +118,7 @@
       cursor: pointer;
       font-size: 1.2rem;
       transition: all 0.3s ease;
-      color: #6b8b7a;
+      color: #2c6e9e;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -131,7 +131,7 @@
     }
 
     .theme-toggle:hover {
-      background: #6b8b7a;
+      background: #2c6e9e;
       color: white;
       transform: rotate(15deg) scale(1.05);
     }
@@ -155,11 +155,11 @@
       border-radius: 60px;
       font-size: 0.95rem;
       font-family: 'Inter', sans-serif;
-      background: rgba(255, 255, 255, 0.9);
-      color: #2c3e3a;
+      background: rgba(255, 255, 255, 0.95);
+      color: #1a4a6e;
       transition: all 0.3s;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-      border: 1px solid rgba(139, 168, 158, 0.2);
+      border: 1px solid rgba(44, 110, 158, 0.2);
     }
 
     body.dark .task-input {
@@ -170,8 +170,8 @@
 
     .task-input:focus {
       outline: none;
-      border-color: #6b8b7a;
-      box-shadow: 0 0 0 3px rgba(107, 139, 122, 0.15);
+      border-color: #2c6e9e;
+      box-shadow: 0 0 0 3px rgba(44, 110, 158, 0.15);
     }
 
     body.dark .task-input:focus {
@@ -180,11 +180,11 @@
     }
 
     .task-input::placeholder {
-      color: #b9b0a8;
+      color: #8ab3cf;
     }
 
     .add-btn {
-      background: linear-gradient(135deg, #6f9a8a, #b2826b);
+      background: linear-gradient(135deg, #2c6e9e, #5a9bc2);
       border: none;
       width: 56px;
       height: 56px;
@@ -196,12 +196,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 12px rgba(107, 139, 122, 0.3);
+      box-shadow: 0 4px 12px rgba(44, 110, 158, 0.3);
     }
 
     .add-btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(107, 139, 122, 0.4);
+      box-shadow: 0 8px 20px rgba(44, 110, 158, 0.4);
     }
 
     /* Barra de pesquisa estilizada */
@@ -212,10 +212,10 @@
     .search-box {
       display: flex;
       align-items: center;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       border-radius: 60px;
       padding: 6px 22px;
-      border: 1px solid rgba(139, 168, 158, 0.2);
+      border: 1px solid rgba(44, 110, 158, 0.2);
       transition: all 0.3s;
     }
 
@@ -225,7 +225,7 @@
     }
 
     .search-box:focus-within {
-      border-color: #6b8b7a;
+      border-color: #2c6e9e;
       background: white;
     }
 
@@ -235,7 +235,7 @@
     }
 
     .search-box i {
-      color: #8ba89e;
+      color: #2c6e9e;
       font-size: 1rem;
     }
 
@@ -247,7 +247,7 @@
       font-size: 0.9rem;
       font-family: 'Inter', sans-serif;
       outline: none;
-      color: #2c3e3a;
+      color: #1a4a6e;
     }
 
     body.dark .search-input {
@@ -261,8 +261,13 @@
       align-items: center;
       margin-bottom: 28px;
       padding: 16px 0;
-      border-top: 1px solid rgba(139, 168, 158, 0.2);
-      border-bottom: 1px solid rgba(139, 168, 158, 0.2);
+      border-top: 1px solid rgba(44, 110, 158, 0.2);
+      border-bottom: 1px solid rgba(44, 110, 158, 0.2);
+    }
+
+    body.dark .stats {
+      border-top-color: rgba(168, 195, 184, 0.2);
+      border-bottom-color: rgba(168, 195, 184, 0.2);
     }
 
     .stats-info {
@@ -274,9 +279,9 @@
       font-size: 0.85rem;
       font-weight: 600;
       padding: 6px 14px;
-      background: rgba(139, 168, 158, 0.12);
+      background: rgba(44, 110, 158, 0.1);
       border-radius: 40px;
-      color: #5f7e72;
+      color: #2c6e9e;
       letter-spacing: -0.2px;
     }
 
@@ -288,7 +293,7 @@
     .clear-btn {
       background: transparent;
       border: none;
-      color: #b9b0a8;
+      color: #8ab3cf;
       padding: 8px 16px;
       font-size: 0.75rem;
       font-weight: 500;
@@ -298,8 +303,8 @@
     }
 
     .clear-btn:hover {
-      background: rgba(178, 130, 107, 0.1);
-      color: #b2826b;
+      background: rgba(44, 110, 158, 0.1);
+      color: #2c6e9e;
     }
 
     body.dark .clear-btn:hover {
@@ -320,12 +325,12 @@
     }
 
     .task-list::-webkit-scrollbar-track {
-      background: rgba(139, 168, 158, 0.1);
+      background: rgba(44, 110, 158, 0.1);
       border-radius: 10px;
     }
 
     .task-list::-webkit-scrollbar-thumb {
-      background: #b2826b;
+      background: #2c6e9e;
       border-radius: 10px;
     }
 
@@ -334,7 +339,7 @@
     }
 
     .task-item {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.8);
       margin-bottom: 12px;
       padding: 16px 20px;
       border-radius: 28px;
@@ -342,7 +347,7 @@
       align-items: center;
       justify-content: space-between;
       transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      border: 1px solid rgba(139, 168, 158, 0.15);
+      border: 1px solid rgba(44, 110, 158, 0.15);
       backdrop-filter: blur(4px);
       animation: slideIn 0.3s ease;
     }
@@ -365,8 +370,8 @@
 
     .task-item:hover {
       transform: translateX(5px) translateY(-2px);
-      border-color: #b2826b;
-      background: rgba(255, 255, 255, 0.85);
+      border-color: #2c6e9e;
+      background: rgba(255, 255, 255, 0.92);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
 
@@ -388,7 +393,7 @@
       width: 26px;
       height: 26px;
       border-radius: 50%;
-      border: 2px solid #b2826b;
+      border: 2px solid #2c6e9e;
       background: transparent;
       display: flex;
       align-items: center;
@@ -401,7 +406,7 @@
     }
 
     .task-check.completed {
-      background: linear-gradient(135deg, #6f9a8a, #b2826b);
+      background: linear-gradient(135deg, #2c6e9e, #5a9bc2);
       border-color: transparent;
     }
 
@@ -423,7 +428,7 @@
     .task-text {
       font-size: 1rem;
       font-weight: 500;
-      color: #3a524a;
+      color: #1a4a6e;
       transition: all 0.2s;
       word-break: break-word;
     }
@@ -434,7 +439,7 @@
 
     .task-text.completed {
       text-decoration: line-through;
-      color: #b9b0a8;
+      color: #8ab3cf;
     }
 
     body.dark .task-text.completed {
@@ -447,14 +452,14 @@
     }
 
     .task-btn {
-      background: rgba(139, 168, 158, 0.1);
+      background: rgba(44, 110, 158, 0.08);
       border: none;
       width: 36px;
       height: 36px;
       border-radius: 50%;
       cursor: pointer;
       transition: all 0.2s;
-      color: #8ba89e;
+      color: #2c6e9e;
       font-size: 0.9rem;
     }
 
@@ -464,7 +469,7 @@
     }
 
     .task-btn:hover {
-      background: #b2826b;
+      background: #2c6e9e;
       color: white;
       transform: scale(1.05);
     }
@@ -487,7 +492,7 @@
     .empty-message i {
       font-size: 4rem;
       margin-bottom: 20px;
-      color: #b9b0a8;
+      color: #8ab3cf;
       opacity: 0.6;
     }
 
@@ -498,7 +503,7 @@
     .empty-message p {
       font-size: 1rem;
       font-weight: 500;
-      color: #8ba89e;
+      color: #2c6e9e;
       margin-top: 8px;
     }
 
@@ -508,7 +513,11 @@
 
     .empty-message small {
       font-size: 0.8rem;
-      color: #cbc3bb;
+      color: #8ab3cf;
+    }
+
+    body.dark .empty-message small {
+      color: #7a958b;
     }
 
     /* Animações extras */
@@ -591,7 +600,6 @@
 
   function saveTasks() {
     localStorage.setItem("tasks_flow", JSON.stringify(tasks));
-    // Pequeno feedback visual
     const container = document.querySelector('.todo-container');
     container.classList.add('saving');
     setTimeout(() => container.classList.remove('saving'), 300);
@@ -721,7 +729,6 @@
     }
   }
 
-  // Modo escuro/claro
   function initTheme() {
     const savedTheme = localStorage.getItem("todoTheme");
     if (savedTheme === "dark") {
@@ -746,13 +753,11 @@
     }
   }
 
-  // Event listener para o botão
   const themeBtn = document.getElementById("themeToggle");
   if (themeBtn) {
     themeBtn.addEventListener("click", toggleDarkMode);
   }
 
-  // Inicializar
   initTheme();
   renderTasks();
 </script>
