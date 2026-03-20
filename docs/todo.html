@@ -23,9 +23,14 @@
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
+      transition: background 0.3s ease;
     }
 
-    /* Container principal - elegante e clean */
+    body.dark {
+      background: #121212;
+    }
+
+    /* Container principal */
     .todo-container {
       max-width: 580px;
       width: 100%;
@@ -34,6 +39,11 @@
       padding: 36px;
       box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease;
+    }
+
+    body.dark .todo-container {
+      background: #1e2a2a;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.3);
     }
 
     /* Header */
@@ -56,19 +66,27 @@
       letter-spacing: -0.3px;
     }
 
+    body.dark h1 {
+      color: #e8dfd8;
+    }
+
     h1 i {
       color: #8ba89e;
       font-size: 1.6rem;
     }
 
+    body.dark h1 i {
+      color: #a8c3b8;
+    }
+
     .theme-toggle {
       background: #f5f3f0;
       border: none;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       transition: all 0.3s;
       color: #6b8b7a;
       display: flex;
@@ -76,9 +94,18 @@
       justify-content: center;
     }
 
+    body.dark .theme-toggle {
+      background: #2a3a38;
+      color: #e8dfd8;
+    }
+
     .theme-toggle:hover {
       background: #e8e4df;
       transform: scale(1.02);
+    }
+
+    body.dark .theme-toggle:hover {
+      background: #3e5a54;
     }
 
     /* Área de adicionar tarefa */
@@ -100,21 +127,36 @@
       transition: all 0.3s;
     }
 
+    body.dark .task-input {
+      background: #2a3a38;
+      border-color: #3e5a54;
+      color: #e8dfd8;
+    }
+
     .task-input:focus {
       outline: none;
       border-color: #b2c5ba;
       box-shadow: 0 0 0 3px rgba(107, 139, 122, 0.1);
     }
 
+    body.dark .task-input:focus {
+      border-color: #a8c3b8;
+      box-shadow: 0 0 0 3px rgba(168, 195, 184, 0.2);
+    }
+
     .task-input::placeholder {
       color: #b9b0a8;
+    }
+
+    body.dark .task-input::placeholder {
+      color: #7a958b;
     }
 
     .add-btn {
       background: #ffffff;
       border: 1px solid #e2ddd8;
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       color: #8ba89e;
       font-size: 1.2rem;
@@ -125,10 +167,22 @@
       justify-content: center;
     }
 
+    body.dark .add-btn {
+      background: #2a3a38;
+      border-color: #3e5a54;
+      color: #a8c3b8;
+    }
+
     .add-btn:hover {
       background: #f9f7f5;
       border-color: #b2c5ba;
       color: #6b8b7a;
+    }
+
+    body.dark .add-btn:hover {
+      background: #3e5a54;
+      border-color: #a8c3b8;
+      color: #ffffff;
     }
 
     /* Barra de pesquisa */
@@ -146,14 +200,28 @@
       transition: all 0.3s;
     }
 
+    body.dark .search-box {
+      background: #2a3a38;
+      border-color: #3e5a54;
+    }
+
     .search-box:focus-within {
       border-color: #b2c5ba;
       background: #ffffff;
     }
 
+    body.dark .search-box:focus-within {
+      border-color: #a8c3b8;
+      background: #2a3a38;
+    }
+
     .search-box i {
       color: #b9b0a8;
       font-size: 0.9rem;
+    }
+
+    body.dark .search-box i {
+      color: #7a958b;
     }
 
     .search-input {
@@ -167,8 +235,16 @@
       color: #2c3e3a;
     }
 
+    body.dark .search-input {
+      color: #e8dfd8;
+    }
+
     .search-input::placeholder {
       color: #cbc3bb;
+    }
+
+    body.dark .search-input::placeholder {
+      color: #7a958b;
     }
 
     /* Estatísticas */
@@ -179,6 +255,10 @@
       margin-bottom: 24px;
       padding: 12px 0 8px;
       border-bottom: 1px solid #efebe7;
+    }
+
+    body.dark .stats {
+      border-bottom-color: #3e5a54;
     }
 
     .stats-info {
@@ -192,6 +272,10 @@
       color: #8ba89e;
     }
 
+    body.dark .stat-badge {
+      color: #a8c3b8;
+    }
+
     .clear-btn {
       background: transparent;
       border: none;
@@ -203,8 +287,16 @@
       transition: all 0.3s;
     }
 
+    body.dark .clear-btn {
+      color: #7a958b;
+    }
+
     .clear-btn:hover {
       color: #b2826b;
+    }
+
+    body.dark .clear-btn:hover {
+      color: #cfa58d;
     }
 
     /* Lista de tarefas */
@@ -224,9 +316,17 @@
       border-radius: 10px;
     }
 
+    body.dark .task-list::-webkit-scrollbar-track {
+      background: #2a3a38;
+    }
+
     .task-list::-webkit-scrollbar-thumb {
       background: #d4cdc5;
       border-radius: 10px;
+    }
+
+    body.dark .task-list::-webkit-scrollbar-thumb {
+      background: #5a7a70;
     }
 
     .task-item {
@@ -241,9 +341,19 @@
       border: 1px solid #efebe7;
     }
 
+    body.dark .task-item {
+      background: #2a3a38;
+      border-color: #3e5a54;
+    }
+
     .task-item:hover {
       border-color: #e2ddd8;
       background: #fefdfc;
+    }
+
+    body.dark .task-item:hover {
+      border-color: #5a7a70;
+      background: #2f4240;
     }
 
     .task-content {
@@ -266,9 +376,19 @@
       transition: all 0.2s;
     }
 
+    body.dark .task-check {
+      border-color: #7a958b;
+      background: #2a3a38;
+    }
+
     .task-check.completed {
       background: #8ba89e;
       border-color: #8ba89e;
+    }
+
+    body.dark .task-check.completed {
+      background: #a8c3b8;
+      border-color: #a8c3b8;
     }
 
     .task-check i {
@@ -290,9 +410,17 @@
       word-break: break-word;
     }
 
+    body.dark .task-text {
+      color: #e8dfd8;
+    }
+
     .task-text.completed {
       text-decoration: line-through;
       color: #cbc3bb;
+    }
+
+    body.dark .task-text.completed {
+      color: #7a958b;
     }
 
     .task-actions {
@@ -312,13 +440,26 @@
       font-size: 0.85rem;
     }
 
+    body.dark .task-btn {
+      color: #7a958b;
+    }
+
     .task-btn:hover {
       background: #f5f3f0;
       color: #8ba89e;
     }
 
+    body.dark .task-btn:hover {
+      background: #3e5a54;
+      color: #e8dfd8;
+    }
+
     .task-btn.delete:hover {
       color: #e0a38b;
+    }
+
+    body.dark .task-btn.delete:hover {
+      color: #e6b89e;
     }
 
     /* Mensagem vazia */
@@ -328,10 +469,18 @@
       color: #cbc3bb;
     }
 
+    body.dark .empty-message {
+      color: #7a958b;
+    }
+
     .empty-message i {
       font-size: 3rem;
       margin-bottom: 15px;
       color: #e2ddd8;
+    }
+
+    body.dark .empty-message i {
+      color: #5a7a70;
     }
 
     .empty-message p {
@@ -364,7 +513,7 @@
       <i class="far fa-circle-check"></i>
       Flow Tasks
     </h1>
-    <button class="theme-toggle" onclick="toggleDarkMode()">
+    <button class="theme-toggle" id="themeToggle">
       <i class="fas fa-moon"></i>
     </button>
   </div>
@@ -527,50 +676,39 @@
     }
   }
 
-  function toggleDarkMode() {
-    const body = document.body;
-    const container = document.querySelector(".todo-container");
-    const icon = document.querySelector(".theme-toggle i");
-    
-    if (body.style.background !== "#1a2c2e") {
-      body.style.background = "#1a2c2e";
-      container.style.background = "#2a3a38";
-      container.style.boxShadow = "0 20px 35px -12px rgba(0, 0, 0, 0.3)";
-      icon.className = "fas fa-sun";
-      
-      document.querySelectorAll(".task-input, .search-box, .task-item, .add-btn").forEach(el => {
-        if (el.classList.contains("task-input")) {
-          el.style.background = "#2a3a38";
-          el.style.borderColor = "#3e5a54";
-          el.style.color = "#e8dfd8";
-        } else if (el.classList.contains("search-box")) {
-          el.style.background = "#2a3a38";
-          el.style.borderColor = "#3e5a54";
-        } else if (el.classList.contains("task-item")) {
-          el.style.background = "#2a3a38";
-          el.style.borderColor = "#3e5a54";
-        } else if (el.classList.contains("add-btn")) {
-          el.style.background = "#2a3a38";
-          el.style.borderColor = "#3e5a54";
-          el.style.color = "#8ba89e";
-        }
-      });
-      
-      document.querySelectorAll(".task-text").forEach(el => el.style.color = "#e8dfd8");
-      document.querySelectorAll(".stat-badge").forEach(el => el.style.color = "#8ba89e");
-      document.querySelector(".stats").style.borderBottomColor = "#3e5a54";
-      
-      localStorage.setItem("todoTheme", "dark");
-    } else {
-      body.style.background = "";
-      location.reload();
+  // Modo escuro/claro com persistência
+  function initTheme() {
+    const savedTheme = localStorage.getItem("todoTheme");
+    if (savedTheme === "dark") {
+      document.body.classList.add("dark");
+      const icon = document.querySelector("#themeToggle i");
+      if (icon) icon.className = "fas fa-sun";
     }
   }
-  
-  if (localStorage.getItem("todoTheme") === "dark") {
-    toggleDarkMode();
+
+  function toggleDarkMode() {
+    const body = document.body;
+    const icon = document.querySelector("#themeToggle i");
+    
+    if (body.classList.contains("dark")) {
+      body.classList.remove("dark");
+      icon.className = "fas fa-moon";
+      localStorage.setItem("todoTheme", "light");
+    } else {
+      body.classList.add("dark");
+      icon.className = "fas fa-sun";
+      localStorage.setItem("todoTheme", "dark");
+    }
   }
 
+  // Event listener para o botão
+  const themeBtn = document.getElementById("themeToggle");
+  if (themeBtn) {
+    themeBtn.addEventListener("click", toggleDarkMode);
+  }
+
+  // Inicializar tema
+  initTheme();
   renderTasks();
 </script>
 
