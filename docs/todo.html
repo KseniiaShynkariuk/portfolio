@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Flow Tasks | Organize seu dia com estilo</title>
+  <title>Flow Tasks | Organize suas tarefas</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
@@ -16,47 +16,27 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f0c1f 0%, #1a1a2e 50%, #16213e 100%);
+      font-family: 'Inter', sans-serif;
+      background: #f4f2ef;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
-      position: relative;
-      overflow-x: hidden;
     }
 
-    /* Fundo com partículas animadas */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(circle at 20% 40%, rgba(255, 107, 157, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 70%, rgba(107, 70, 193, 0.1) 0%, transparent 50%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Container principal com efeito glassmorphism roxo */
+    /* Container principal - elegante e clean */
     .todo-container {
-      max-width: 600px;
+      max-width: 580px;
       width: 100%;
-      background: rgba(20, 15, 45, 0.85);
-      backdrop-filter: blur(12px);
+      background: #ffffff;
       border-radius: 32px;
-      padding: 32px;
-      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 107, 157, 0.2);
-      position: relative;
-      z-index: 1;
+      padding: 36px;
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease;
-      border: 1px solid rgba(255, 107, 157, 0.3);
     }
 
-    /* Header com gradiente neon */
+    /* Header */
     .todo-header {
       display: flex;
       justify-content: space-between;
@@ -67,46 +47,38 @@
     }
 
     h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #ff6b9d, #c084fc, #a855f7);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #2c3e3a;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      letter-spacing: -0.5px;
+      gap: 10px;
+      letter-spacing: -0.3px;
     }
 
     h1 i {
-      background: linear-gradient(135deg, #ff6b9d, #c084fc);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      font-size: 1.8rem;
+      color: #8ba89e;
+      font-size: 1.6rem;
     }
 
     .theme-toggle {
-      background: rgba(255, 107, 157, 0.2);
-      border: 1px solid rgba(255, 107, 157, 0.4);
-      width: 48px;
-      height: 48px;
+      background: #f5f3f0;
+      border: none;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       transition: all 0.3s;
-      color: #ff6b9d;
+      color: #6b8b7a;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .theme-toggle:hover {
-      background: #ff6b9d;
-      color: #0f0c1f;
-      transform: rotate(15deg) scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+      background: #e8e4df;
+      transform: scale(1.02);
     }
 
     /* Área de adicionar tarefa */
@@ -118,45 +90,45 @@
 
     .task-input {
       flex: 1;
-      padding: 16px 20px;
-      border: 2px solid rgba(255, 107, 157, 0.3);
-      border-radius: 60px;
-      font-size: 1rem;
-      font-family: 'Poppins', sans-serif;
-      background: rgba(10, 8, 25, 0.8);
-      color: #fff;
+      padding: 14px 18px;
+      border: 1px solid #e2ddd8;
+      border-radius: 24px;
+      font-size: 0.95rem;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #2c3e3a;
       transition: all 0.3s;
     }
 
     .task-input:focus {
       outline: none;
-      border-color: #ff6b9d;
-      box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.2);
+      border-color: #b2c5ba;
+      box-shadow: 0 0 0 3px rgba(107, 139, 122, 0.1);
     }
 
     .task-input::placeholder {
-      color: rgba(255, 255, 255, 0.4);
+      color: #b9b0a8;
     }
 
     .add-btn {
-      background: linear-gradient(135deg, #ff6b9d, #c084fc);
-      border: none;
-      width: 54px;
-      height: 54px;
+      background: #ffffff;
+      border: 1px solid #e2ddd8;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      color: white;
-      font-size: 1.5rem;
+      color: #8ba89e;
+      font-size: 1.2rem;
       cursor: pointer;
       transition: all 0.3s;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
     }
 
     .add-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(255, 107, 157, 0.6);
+      background: #f9f7f5;
+      border-color: #b2c5ba;
+      color: #6b8b7a;
     }
 
     /* Barra de pesquisa */
@@ -167,36 +139,36 @@
     .search-box {
       display: flex;
       align-items: center;
-      background: rgba(10, 8, 25, 0.6);
+      background: #f9f7f5;
       border-radius: 60px;
-      padding: 4px 20px;
-      border: 1px solid rgba(255, 107, 157, 0.3);
+      padding: 4px 18px;
+      border: 1px solid #e2ddd8;
       transition: all 0.3s;
     }
 
     .search-box:focus-within {
-      border-color: #ff6b9d;
-      box-shadow: 0 0 0 2px rgba(255, 107, 157, 0.2);
+      border-color: #b2c5ba;
+      background: #ffffff;
     }
 
     .search-box i {
-      color: #ff6b9d;
-      font-size: 1rem;
+      color: #b9b0a8;
+      font-size: 0.9rem;
     }
 
     .search-input {
       flex: 1;
-      padding: 14px 12px;
+      padding: 12px 12px;
       border: none;
       background: transparent;
       font-size: 0.9rem;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Inter', sans-serif;
       outline: none;
-      color: #fff;
+      color: #2c3e3a;
     }
 
     .search-input::placeholder {
-      color: rgba(255, 255, 255, 0.4);
+      color: #cbc3bb;
     }
 
     /* Estatísticas */
@@ -205,8 +177,8 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 24px;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 107, 157, 0.3);
+      padding: 12px 0 8px;
+      border-bottom: 1px solid #efebe7;
     }
 
     .stats-info {
@@ -215,32 +187,24 @@
     }
 
     .stat-badge {
-      background: rgba(255, 107, 157, 0.15);
-      padding: 6px 16px;
-      border-radius: 40px;
       font-size: 0.8rem;
-      font-weight: 600;
-      color: #ff6b9d;
-      border: 1px solid rgba(255, 107, 157, 0.3);
+      font-weight: 500;
+      color: #8ba89e;
     }
 
     .clear-btn {
-      background: rgba(255, 107, 157, 0.15);
-      border: 1px solid rgba(255, 107, 157, 0.4);
-      color: #ff6b9d;
-      padding: 8px 20px;
-      border-radius: 40px;
+      background: transparent;
+      border: none;
+      color: #b9b0a8;
+      padding: 6px 0;
       font-size: 0.75rem;
-      font-weight: 600;
+      font-weight: 500;
       cursor: pointer;
       transition: all 0.3s;
     }
 
     .clear-btn:hover {
-      background: #ff6b9d;
-      color: #0f0c1f;
-      border-color: #ff6b9d;
-      box-shadow: 0 0 15px rgba(255, 107, 157, 0.4);
+      color: #b2826b;
     }
 
     /* Lista de tarefas */
@@ -252,47 +216,34 @@
     }
 
     .task-list::-webkit-scrollbar {
-      width: 5px;
+      width: 4px;
     }
 
     .task-list::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.1);
+      background: #efebe7;
       border-radius: 10px;
     }
 
     .task-list::-webkit-scrollbar-thumb {
-      background: #ff6b9d;
+      background: #d4cdc5;
       border-radius: 10px;
     }
 
     .task-item {
-      background: rgba(30, 25, 55, 0.8);
-      margin-bottom: 12px;
-      padding: 16px 20px;
+      background: #ffffff;
+      margin-bottom: 8px;
+      padding: 14px 16px;
       border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: all 0.3s;
-      border: 1px solid rgba(255, 107, 157, 0.2);
-      animation: slideIn 0.3s ease;
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+      transition: all 0.2s;
+      border: 1px solid #efebe7;
     }
 
     .task-item:hover {
-      transform: translateX(5px);
-      border-color: #ff6b9d;
-      box-shadow: 0 5px 15px rgba(255, 107, 157, 0.2);
+      border-color: #e2ddd8;
+      background: #fefdfc;
     }
 
     .task-content {
@@ -304,11 +255,11 @@
     }
 
     .task-check {
-      width: 26px;
-      height: 26px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      border: 2px solid #ff6b9d;
-      background: transparent;
+      border: 1.5px solid #d4cdc5;
+      background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -316,13 +267,13 @@
     }
 
     .task-check.completed {
-      background: linear-gradient(135deg, #ff6b9d, #c084fc);
-      border-color: transparent;
-      color: white;
+      background: #8ba89e;
+      border-color: #8ba89e;
     }
 
     .task-check i {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
+      color: white;
       opacity: 0;
       transition: opacity 0.2s;
     }
@@ -332,16 +283,16 @@
     }
 
     .task-text {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
+      color: #4a5b55;
       transition: all 0.2s;
       word-break: break-word;
-      color: #fff;
     }
 
     .task-text.completed {
       text-decoration: line-through;
-      opacity: 0.5;
+      color: #cbc3bb;
     }
 
     .task-actions {
@@ -350,49 +301,42 @@
     }
 
     .task-btn {
-      background: rgba(255, 107, 157, 0.15);
+      background: transparent;
       border: none;
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       cursor: pointer;
       transition: all 0.2s;
-      color: #ff6b9d;
-      font-size: 0.9rem;
+      color: #cbc3bb;
+      font-size: 0.85rem;
     }
 
     .task-btn:hover {
-      background: #ff6b9d;
-      color: #0f0c1f;
-      transform: scale(1.05);
+      background: #f5f3f0;
+      color: #8ba89e;
     }
 
     .task-btn.delete:hover {
-      background: #ff4757;
-      color: white;
+      color: #e0a38b;
     }
 
     /* Mensagem vazia */
     .empty-message {
       text-align: center;
       padding: 50px 20px;
-      color: rgba(255, 255, 255, 0.5);
+      color: #cbc3bb;
     }
 
     .empty-message i {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 15px;
-      color: #ff6b9d;
-      opacity: 0.6;
+      color: #e2ddd8;
     }
 
     .empty-message p {
-      font-size: 1rem;
-    }
-
-    .empty-message small {
-      font-size: 0.8rem;
-      opacity: 0.6;
+      font-size: 0.9rem;
+      margin-top: 8px;
     }
 
     /* Responsivo */
@@ -404,11 +348,10 @@
         font-size: 1.5rem;
       }
       .task-item {
-        padding: 12px 16px;
+        padding: 12px 14px;
       }
       .stats-info {
-        flex-direction: column;
-        gap: 8px;
+        gap: 12px;
       }
     }
   </style>
@@ -418,16 +361,16 @@
 <div class="todo-container">
   <div class="todo-header">
     <h1>
-      <i class="fas fa-bolt"></i>
+      <i class="far fa-circle-check"></i>
       Flow Tasks
     </h1>
     <button class="theme-toggle" onclick="toggleDarkMode()">
-      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon"></i>
     </button>
   </div>
 
   <div class="add-task-area">
-    <input type="text" id="taskInput" class="task-input" placeholder="Nova tarefa... ✨" onkeypress="handleKeyPress(event)">
+    <input type="text" id="taskInput" class="task-input" placeholder="Adicionar nova tarefa..." onkeypress="handleKeyPress(event)">
     <button class="add-btn" onclick="addTask()">
       <i class="fas fa-plus"></i>
     </button>
@@ -436,7 +379,7 @@
   <div class="search-area">
     <div class="search-box">
       <i class="fas fa-search"></i>
-      <input type="text" id="searchInput" class="search-input" placeholder="Pesquisar tarefas..." onkeyup="searchTask()">
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar tarefa..." onkeyup="searchTask()">
     </div>
   </div>
 
@@ -454,10 +397,10 @@
 </div>
 
 <script>
-  let tasks = JSON.parse(localStorage.getItem("tasks_neon")) || [];
+  let tasks = JSON.parse(localStorage.getItem("tasks_elegant")) || [];
 
   function saveTasks() {
-    localStorage.setItem("tasks_neon", JSON.stringify(tasks));
+    localStorage.setItem("tasks_elegant", JSON.stringify(tasks));
   }
 
   function renderTasks(filteredTasks = null) {
@@ -474,9 +417,9 @@
     if (tasksToRender.length === 0) {
       list.innerHTML = `
         <div class="empty-message">
-          <i class="fas fa-star-of-life"></i>
-          <p>✨ Nenhuma tarefa por aqui</p>
-          <small>Adicione sua primeira tarefa acima</small>
+          <i class="far fa-clipboard"></i>
+          <p>Nenhuma tarefa por aqui</p>
+          <small style="font-size:0.75rem">Adicione sua primeira tarefa acima</small>
         </div>
       `;
     } else {
@@ -497,7 +440,7 @@
               <i class="fas fa-pencil-alt"></i>
             </button>
             <button class="task-btn delete" onclick="deleteTask(${originalIndex}); event.stopPropagation();">
-              <i class="fas fa-trash"></i>
+              <i class="fas fa-trash-alt"></i>
             </button>
           </div>
         `;
@@ -520,7 +463,7 @@
     const text = input.value.trim();
     
     if (!text) {
-      alert("✨ Por favor, digite uma tarefa!");
+      alert("Por favor, digite uma tarefa.");
       return;
     }
     
@@ -531,7 +474,7 @@
   }
 
   function deleteTask(index) {
-    if (confirm("🗑 Remover esta tarefa?")) {
+    if (confirm("Remover esta tarefa?")) {
       tasks.splice(index, 1);
       saveTasks();
       renderTasks();
@@ -545,7 +488,7 @@
   }
 
   function editTask(index) {
-    const newText = prompt("✏️ Editar tarefa:", tasks[index].text);
+    const newText = prompt("Editar tarefa:", tasks[index].text);
     if (newText && newText.trim()) {
       tasks[index].text = newText.trim();
       saveTasks();
@@ -554,7 +497,7 @@
   }
 
   function clearAll() {
-    if (confirm("⚠️ Tem certeza? Todas as tarefas serão apagadas permanentemente.")) {
+    if (confirm("Tem certeza? Todas as tarefas serão apagadas.")) {
       tasks = [];
       saveTasks();
       renderTasks();
@@ -586,35 +529,46 @@
 
   function toggleDarkMode() {
     const body = document.body;
+    const container = document.querySelector(".todo-container");
     const icon = document.querySelector(".theme-toggle i");
     
-    if (body.style.background !== "linear-gradient(135deg, #f5f0ff 0%, #e9e4ff 100%)") {
-      body.style.background = "linear-gradient(135deg, #f5f0ff 0%, #e9e4ff 100%)";
-      body.style.backgroundAttachment = "fixed";
-      icon.className = "fas fa-moon";
+    if (body.style.background !== "#1a2c2e") {
+      body.style.background = "#1a2c2e";
+      container.style.background = "#2a3a38";
+      container.style.boxShadow = "0 20px 35px -12px rgba(0, 0, 0, 0.3)";
+      icon.className = "fas fa-sun";
       
-      document.querySelector(".todo-container").style.background = "rgba(255, 255, 255, 0.95)";
-      document.querySelector(".todo-container").style.border = "1px solid rgba(156, 84, 218, 0.3)";
-      
-      const allTexts = document.querySelectorAll(".task-text, h1, .stat-badge, .clear-btn, .task-input, .search-input, .empty-message p, .empty-message small");
-      allTexts.forEach(el => {
-        if (el.classList.contains("task-text")) el.style.color = "#1a1a2e";
-        else if (el.tagName === "H1") el.style.background = "linear-gradient(135deg, #9c54da, #ff6b9d)";
-        else if (el.classList.contains("stat-badge")) el.style.color = "#9c54da";
-        else if (el.classList.contains("clear-btn")) el.style.color = "#9c54da";
-        else if (el.classList.contains("task-input")) el.style.color = "#1a1a2e";
-        else if (el.classList.contains("search-input")) el.style.color = "#1a1a2e";
+      document.querySelectorAll(".task-input, .search-box, .task-item, .add-btn").forEach(el => {
+        if (el.classList.contains("task-input")) {
+          el.style.background = "#2a3a38";
+          el.style.borderColor = "#3e5a54";
+          el.style.color = "#e8dfd8";
+        } else if (el.classList.contains("search-box")) {
+          el.style.background = "#2a3a38";
+          el.style.borderColor = "#3e5a54";
+        } else if (el.classList.contains("task-item")) {
+          el.style.background = "#2a3a38";
+          el.style.borderColor = "#3e5a54";
+        } else if (el.classList.contains("add-btn")) {
+          el.style.background = "#2a3a38";
+          el.style.borderColor = "#3e5a54";
+          el.style.color = "#8ba89e";
+        }
       });
       
-      localStorage.setItem("todoTheme", "light");
+      document.querySelectorAll(".task-text").forEach(el => el.style.color = "#e8dfd8");
+      document.querySelectorAll(".stat-badge").forEach(el => el.style.color = "#8ba89e");
+      document.querySelector(".stats").style.borderBottomColor = "#3e5a54";
+      
+      localStorage.setItem("todoTheme", "dark");
     } else {
       body.style.background = "";
-      icon.className = "fas fa-sun";
-      document.querySelector(".todo-container").style.background = "rgba(20, 15, 45, 0.85)";
-      document.querySelector(".todo-container").style.border = "1px solid rgba(255, 107, 157, 0.3)";
-      
       location.reload();
     }
+  }
+  
+  if (localStorage.getItem("todoTheme") === "dark") {
+    toggleDarkMode();
   }
 
   renderTasks();
