@@ -1,120 +1,608 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>МИРА | Салон красоты</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>МИРА | Салон красоты — Премиальный стиль и гармония</title>
+  <!-- Шрифты и иконки -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fefaf8;
+      color: #2a2422;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
 
-<style>
-body {margin:0; font-family:'Montserrat',sans-serif; background:#fcf9f7; color:#333;}
-h1,h2,h3 {font-family:'Cormorant Garamond',serif;}
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
 
-.container {max-width:1200px; margin:auto; padding:20px;}
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
 
-header {display:flex; justify-content:space-between; align-items:center; padding:20px;}
-.logo {font-size:28px; font-weight:bold;}
+    /* ===== ХЕДЕР ===== */
+    .header {
+      padding: 20px 0;
+      background: rgba(255, 250, 245, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(150, 110, 90, 0.12);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-.hero {display:flex; flex-wrap:wrap; align-items:center; gap:40px;}
-.hero-text {flex:1;}
-.hero h1 {font-size:48px;}
-.hero-gallery {flex:1; display:grid; grid-template-columns:1fr 1fr; gap:15px;}
-.hero-gallery img {width:100%; border-radius:20px; height:300px; object-fit:cover;}
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.section {padding:60px 0;}
-.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #5e3a2e;
+      letter-spacing: 3px;
+      text-decoration: none;
+    }
+    .logo span {
+      font-weight: 300;
+      color: #bc9a87;
+    }
 
-.card {background:white; padding:20px; border-radius:15px; text-align:center;}
-.card img {width:100%; border-radius:10px; height:200px; object-fit:cover;}
+    .nav-links {
+      display: flex;
+      gap: 48px;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #3f2e26;
+      transition: 0.2s;
+      padding-bottom: 5px;
+      border-bottom: 1px solid transparent;
+    }
+    .nav-links a:hover {
+      color: #b2826b;
+      border-bottom-color: #b2826b;
+    }
 
-button {background:#a67b64; color:white; padding:10px 20px; border:none; border-radius:20px;}
+    .header-btn {
+      background: transparent;
+      border: 1.5px solid #b2826b;
+      color: #5e3a2e;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .header-btn:hover {
+      background: #b2826b;
+      color: white;
+    }
 
-.footer {background:#2d241f; color:white; text-align:center; padding:30px;}
-</style>
+    /* ===== HERO ===== */
+    .hero {
+      padding: 40px 0 90px;
+      background: linear-gradient(145deg, #fff6f0 0%, #fef2ea 100%);
+      position: relative;
+    }
+    .hero .container {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: clamp(3rem, 6vw, 5.2rem);
+      line-height: 1.05;
+      color: #2f241f;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+    .hero-title i {
+      font-style: italic;
+      font-weight: 400;
+      color: #b2826b;
+      display: block;
+      font-size: 0.85em;
+      letter-spacing: -0.5px;
+    }
+    .hero-desc {
+      font-size: 1rem;
+      color: #5f4d42;
+      margin-bottom: 40px;
+      max-width: 480px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+    .btn-group {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #b2826b;
+      border: none;
+      color: white;
+      padding: 14px 38px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      box-shadow: 0 12px 24px rgba(178, 130, 107, 0.3);
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #956e59;
+      transform: translateY(-2px);
+      box-shadow: 0 20px 30px rgba(149, 110, 89, 0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #b2826b;
+      color: #5e3a2e;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .btn-outline:hover {
+      background: rgba(178, 130, 107, 0.1);
+      border-color: #956e59;
+    }
+
+    .hero-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .hero-img {
+      border-radius: 200px 200px 90px 90px;
+      overflow: hidden;
+      box-shadow: 0 30px 35px -18px rgba(60, 40, 30, 0.3);
+      transition: transform 0.4s;
+    }
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s;
+      display: block;
+    }
+    .hero-img:hover img {
+      transform: scale(1.04);
+    }
+    .hero-img:first-child {
+      grid-row: span 2;
+      aspect-ratio: 3/4;
+    }
+    .hero-img:last-child {
+      grid-column: 2;
+      aspect-ratio: 1/1.25;
+    }
+
+    /* ===== УСЛУГИ ===== */
+    .services {
+      padding: 100px 0;
+      background: #ffffff;
+    }
+    .section-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: #bc9a87;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .section-title {
+      font-size: 3rem;
+      color: #2f241f;
+      margin-bottom: 18px;
+    }
+    .section-desc {
+      color: #6b5b52;
+      max-width: 580px;
+      margin-bottom: 60px;
+      font-weight: 400;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
+    }
+    .service-card {
+      background: #fefaf8;
+      padding: 40px 28px;
+      border-radius: 48px 48px 48px 20px;
+      transition: 0.35s;
+      border: 1px solid #f1e4dc;
+      text-align: center;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #d9bfb2;
+      box-shadow: 0 30px 35px -18px rgba(100, 70, 50, 0.2);
+    }
+    .service-icon {
+      font-size: 3rem;
+      color: #b2826b;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.9rem;
+      margin-bottom: 12px;
+      color: #412f27;
+    }
+    .service-card p {
+      color: #7b675d;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+    .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #8d5f4a;
+      border-top: 1px dashed #e2cfc3;
+      padding-top: 18px;
+    }
+
+    /* ===== ПОРТФОЛИО СТИЛЬНОЕ ===== */
+    .portfolio {
+      padding: 100px 0;
+      background: #fefaf8;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 50px;
+    }
+    .portfolio-item {
+      position: relative;
+      border-radius: 36px 36px 36px 12px;
+      overflow: hidden;
+      aspect-ratio: 1/1.2;
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.12);
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(0deg, rgba(40, 25, 18, 0.85) 0%, transparent 80%);
+      color: white;
+      padding: 35px 20px 20px;
+      transform: translateY(0);
+      transition: 0.3s;
+    }
+    .overlay h4 {
+      font-size: 1.6rem;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .overlay p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    /* ===== О НАС ===== */
+    .about {
+      padding: 100px 0;
+      background: #fff;
+    }
+    .about .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-img {
+      border-radius: 280px 280px 120px 120px;
+      overflow: hidden;
+      box-shadow: 0 35px 45px -20px #b28b76;
+    }
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .about h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .about p {
+      margin-bottom: 24px;
+      color: #4f3f37;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .signature {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: #b2826b;
+      margin-top: 30px;
+      font-style: italic;
+    }
+
+    /* ===== КОНТАКТЫ ===== */
+    .contact {
+      padding: 80px 0;
+      background: #fef3ec;
+    }
+    .contact-info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      text-align: center;
+      margin: 40px 0 30px;
+    }
+    .contact-item {
+      flex: 1 1 200px;
+    }
+    .contact-item i {
+      font-size: 2.4rem;
+      color: #b2826b;
+      margin-bottom: 12px;
+    }
+    .contact-item h4 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    /* ===== ФУТЕР ===== */
+    .footer {
+      background: #2b211c;
+      color: #e0cfc5;
+      padding: 55px 0 35px;
+      text-align: center;
+    }
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+      margin: 25px 0 25px;
+    }
+    .socials a {
+      color: #cfb7ab;
+      font-size: 1.5rem;
+      transition: 0.2s;
+    }
+    .socials a:hover {
+      color: #f2ddd1;
+    }
+
+    /* Анимации */
+    .hidden {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: all 0.8s cubic-bezier(0.2, 0.9, 0.4, 1);
+    }
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero .container { grid-template-columns: 1fr; text-align: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .btn-group { justify-content: center; }
+      .portfolio-grid { grid-template-columns: repeat(2,1fr); }
+      .about .container { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">МИРА<span>.</span></a>
+      <div class="nav-links">
+        <a href="#services">Услуги</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
+      </div>
+      <button class="header-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Запись</button>
+    </div>
+  </header>
 
-<header class="container">
-<div class="logo">МИРА</div>
-</header>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text hidden">
+        <h1 class="hero-title">Эстетика <i>в каждой детали</i></h1>
+        <p class="hero-desc">Премиальный салон красоты МИРА — пространство, где рождается гармония. Индивидуальный подход и безупречный стиль.</p>
+        <div class="btn-group">
+          <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">Выбрать мастера</button>
+          <button class="btn-outline" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'});">Наши работы</button>
+        </div>
+      </div>
+      <div class="hero-gallery">
+        <div class="hero-img hidden"><img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Стильный интерьер салона"></div>
+        <div class="hero-img hidden"><img src="https://images.pexels.com/photos/3992873/pexels-photo-3992873.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Мастер и клиентка"></div>
+      </div>
+    </div>
+  </section>
 
-<section class="container hero">
-<div class="hero-text">
-<h1>Искусство быть собой</h1>
-<p>Премиальный салон красоты, где стиль встречается с профессионализмом</p>
-<button>Записаться</button>
-</div>
+  <section id="services" class="services">
+    <div class="container">
+      <p class="section-tag hidden">—— ПРЕМИАЛЬНЫЙ СЕРВИС ——</p>
+      <h2 class="section-title hidden">Искусство преображения</h2>
+      <p class="section-desc hidden">Авторские техники, люксовая косметика и мастера с международным опытом</p>
+      <div class="service-grid">
+        <div class="service-card hidden">
+          <div class="service-icon"><i class="fas fa-scissors"></i></div>
+          <h3>Архитектура стрижек</h3>
+          <p>Графичные формы, текстура и идеальный силуэт под тип лица.</p>
+          <div class="price">от 3 200 ₽</div>
+        </div>
+        <div class="service-card hidden">
+          <div class="service-icon"><i class="fas fa-palette"></i></div>
+          <h3>Колористика люкс</h3>
+          <p>AirTouch, балаяж, сложное тонирование. Уход за цветом до 3 месяцев.</p>
+          <div class="price">от 6 900 ₽</div>
+        </div>
+        <div class="service-card hidden">
+          <div class="service-icon"><i class="fas fa-mask"></i></div>
+          <h3>Визаж & бьюти-образы</h3>
+          <p>Дневной, вечерний, свадебный макияж. Скульптурирование лица.</p>
+          <div class="price">от 4 500 ₽</div>
+        </div>
+        <div class="service-card hidden">
+          <div class="service-icon"><i class="fas fa-spa"></i></div>
+          <h3>SPA-ритуалы</h3>
+          <p>Обертывания, массажи, уходы для лица и тела на премиальной косметике.</p>
+          <div class="price">от 4 200 ₽</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="hero-gallery">
-<img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=800" alt="укладка волос">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800" alt="макияж">
-</div>
-</section>
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <p class="section-tag hidden">—— ПОРТФОЛИО ——</p>
+      <h2 class="section-title hidden">Стиль, который вдохновляет</h2>
+      <p class="section-desc hidden">Реальные работы наших мастеров — эстетика и безупречный вкус</p>
+      <div class="portfolio-grid">
+        <div class="portfolio-item hidden">
+          <img src="https://images.pexels.com/photos/2472049/pexels-photo-2472049.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Свадебная прическа в стиле бохо">
+          <div class="overlay"><h4>Невеста Boho</h4><p>Сложное плетение + натуральные локоны</p></div>
+        </div>
+        <div class="portfolio-item hidden">
+          <img src="https://images.pexels.com/photos/3992655/pexels-photo-3992655.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Окрашивание AirTouch">
+          <div class="overlay"><h4>AirTouch balayage</h4><p>Мягкое выгорание, эффект дорогого оттенка</p></div>
+        </div>
+        <div class="portfolio-item hidden">
+          <img src="https://images.pexels.com/photos/3720424/pexels-photo-3720424.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Smoky eyes макияж">
+          <div class="overlay"><h4>Вечерний smoky</h4><p>Дымчатый макияж с сиянием</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="container section">
-<h2>Услуги</h2>
-<div class="grid">
-<div class="card">
-<h3>Стрижка</h3>
-<p>Современные техники для любого типа волос</p>
-<p><b>25€</b></p>
-</div>
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-img hidden">
+        <img src="https://images.pexels.com/photos/3992801/pexels-photo-3992801.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Команда стилистов салона Мира">
+      </div>
+      <div class="hidden">
+        <p class="section-tag">—— КОМАНДА ЭКСПЕРТОВ ——</p>
+        <h2>Мира — это философия красоты</h2>
+        <p>С 2017 года мы создаём пространство, где ценят индивидуальность и качество. В нашей команде — стилисты-технологи, финалисты чемпионатов, визажисты с опытом работы на fashion-неделях.</p>
+        <p>Мы используем только профессиональные бренды: Davines, Wella Professionals, Sisley, La Biosthetique. Каждый клиент получает персональную карту ухода и рекомендации для сохранения результата.</p>
+        <div class="signature">МИРА — твоя новая глава</div>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Окрашивание</h3>
-<p>Плавные переходы и сложные техники</p>
-<p><b>50€</b></p>
-</div>
+  <section id="contact" class="contact">
+    <div class="container">
+      <p class="section-tag hidden">—— СВЯЗЬ С НАМИ ——</p>
+      <h2 class="section-title hidden">Запишитесь на идеальное преображение</h2>
+      <div class="contact-info">
+        <div class="contact-item hidden">
+          <i class="fas fa-map-marker-alt"></i>
+          <h4>Студия</h4>
+          <p>Москва, Цветной бульвар, 21<br>м. Цветной бульвар</p>
+        </div>
+        <div class="contact-item hidden">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Телефон</h4>
+          <p>+7 (495) 222-33-44<br>Ежедневно 10:00–21:00</p>
+        </div>
+        <div class="contact-item hidden">
+          <i class="fab fa-telegram-plane"></i>
+          <h4>Telegram</h4>
+          <p>@mira_salon<br>Быстрая запись</p>
+        </div>
+        <div class="contact-item hidden">
+          <i class="far fa-calendar-alt"></i>
+          <h4>Online запись</h4>
+          <p>24/7 на сайте<br>Подтверждение за 10 минут</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <button class="btn-primary" onclick="alert('Спасибо! Наш администратор свяжется с вами в ближайшее время.')">Записаться онлайн</button>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Макияж</h3>
-<p>Дневной, вечерний и свадебный</p>
-<p><b>35€</b></p>
-</div>
-</div>
-</section>
+  <footer class="footer">
+    <div class="container">
+      <div class="logo" style="color:#e2cfc5; font-size:2rem;">МИРА<span style="color:#bb9885;">.</span></div>
+      <div class="socials">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-telegram"></i></a>
+        <a href="#"><i class="fab fa-vk"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+      </div>
+      <p class="copy">© 2025 Салон красоты МИРА — эстетика и стиль. Все права защищены.</p>
+    </div>
+  </footer>
 
-<section class="container section">
-<h2>Наши работы</h2>
-<div class="grid">
+  <script>
+    const hiddenElements = document.querySelectorAll('.hidden');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -40px 0px" });
+    hiddenElements.forEach(el => observer.observe(el));
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800" alt="свадебная прическа">
-<p>Свадебная укладка</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1605493625526-3d4f0217f425?w=800" alt="окрашивание волос">
-<p>Окрашивание AirTouch</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800" alt="макияж">
-<p>Вечерний макияж</p>
-</div>
-
-</div>
-</section>
-
-<section class="container section">
-<h2>О нас</h2>
-<div class="grid">
-<img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800" style="border-radius:20px;">
-<p>Мы создаем пространство, где каждая девушка чувствует себя уверенно и красиво. Наш салон сочетает стиль, комфорт и высокий уровень сервиса.</p>
-</div>
-</section>
-
-<section class="container section">
-<h2>Контакты</h2>
-<p>Email: salon@email.com</p>
-<p>Телефон: +351 900 000 000</p>
-</section>
-
-<footer class="footer">
-<p>© 2025 Салон МИРА</p>
-</footer>
-
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
