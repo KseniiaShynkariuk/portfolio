@@ -16,8 +16,8 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #fefefe;
-      color: #1a1a1f;
+      background: #f8fafc;
+      color: #1a2c2e;
       scroll-behavior: smooth;
       line-height: 1.5;
     }
@@ -26,10 +26,10 @@
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #f0f0f0;
+      background: #e2e8f0;
     }
     ::-webkit-scrollbar-thumb {
-      background: #d4a5b5;
+      background: #5fa3a3;
       border-radius: 8px;
     }
 
@@ -44,14 +44,14 @@
       padding: 0 28px;
     }
 
-    /* ===== ХЕДЕР ===== */
+    /* ===== ХЕДЕР с новой цветовой гаммой (мята + лаванда) ===== */
     .hero {
       min-height: 85vh;
       display: flex;
       align-items: center;
       position: relative;
-      background: linear-gradient(135deg, #fff5f7 0%, #fef2e8 100%);
-      border-bottom: 1px solid rgba(212, 165, 181, 0.2);
+      background: linear-gradient(135deg, #e6f4f0 0%, #f0eef7 100%);
+      border-bottom: 1px solid rgba(95, 163, 163, 0.2);
     }
 
     .hero-grid {
@@ -68,33 +68,33 @@
 
     .hero-badge {
       display: inline-block;
-      background: rgba(212, 165, 181, 0.2);
+      background: rgba(95, 163, 163, 0.15);
       backdrop-filter: blur(4px);
       padding: 6px 18px;
       border-radius: 60px;
       font-size: 0.75rem;
       font-weight: 500;
       letter-spacing: 0.5px;
-      color: #b4627a;
+      color: #2c7a7a;
       margin-bottom: 24px;
-      border: 0.5px solid rgba(180, 98, 122, 0.3);
+      border: 0.5px solid rgba(95, 163, 163, 0.3);
     }
 
     .hero-content h1 {
       font-size: clamp(2.6rem, 6vw, 4.2rem);
       line-height: 1.2;
       margin-bottom: 20px;
-      color: #1e1a1f;
+      color: #1e3a3a;
     }
     .hero-content h1 span {
-      background: linear-gradient(125deg, #d48ba5, #b46a84);
+      background: linear-gradient(125deg, #4a9d9d, #8b6b9d);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
     }
     .hero-desc {
       font-size: 1.15rem;
-      color: #4a4046;
+      color: #4a6262;
       max-width: 520px;
       margin-bottom: 32px;
       font-weight: 400;
@@ -106,7 +106,7 @@
       flex-wrap: wrap;
     }
     .btn-primary {
-      background: #b4627a;
+      background: #4a9d9d;
       border: none;
       color: white;
       padding: 12px 32px;
@@ -119,17 +119,17 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      box-shadow: 0 8px 18px rgba(180, 98, 122, 0.25);
+      box-shadow: 0 8px 18px rgba(74, 157, 157, 0.25);
     }
     .btn-primary:hover {
-      background: #9e4e68;
+      background: #368282;
       transform: translateY(-2px);
-      box-shadow: 0 15px 25px rgba(158, 78, 104, 0.3);
+      box-shadow: 0 15px 25px rgba(54, 130, 130, 0.3);
     }
     .btn-outline {
       background: transparent;
-      border: 1.5px solid #d4a5b5;
-      color: #5e3a44;
+      border: 1.5px solid #8b9d9d;
+      color: #2c5a5a;
       padding: 12px 28px;
       border-radius: 48px;
       font-weight: 500;
@@ -140,16 +140,16 @@
       gap: 8px;
     }
     .btn-outline:hover {
-      background: rgba(212, 165, 181, 0.15);
-      border-color: #b4627a;
+      background: rgba(74, 157, 157, 0.1);
+      border-color: #4a9d9d;
     }
 
     .hero-visual {
       flex: 0.9;
-      background: #fae9ef;
+      background: #e2f0ed;
       border-radius: 48px 48px 48px 24px;
       overflow: hidden;
-      box-shadow: 0 35px 45px -20px rgba(90, 50, 60, 0.3);
+      box-shadow: 0 35px 45px -20px rgba(60, 100, 100, 0.3);
     }
     .hero-visual img {
       width: 100%;
@@ -171,13 +171,13 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       font-weight: 600;
-      color: #b46a84;
+      color: #6b9b8b;
       margin-bottom: 12px;
     }
     .section-title {
       font-size: 2.5rem;
       margin-bottom: 48px;
-      color: #1e1a1f;
+      color: #1e3a3a;
     }
     .skills-grid {
       display: flex;
@@ -186,39 +186,40 @@
       justify-content: center;
     }
     .skill-card {
-      background: #fefafc;
+      background: #fefefe;
       border-radius: 32px;
       padding: 28px 24px;
       width: 160px;
       text-align: center;
       transition: all 0.25s;
-      border: 1px solid #f3e3e9;
+      border: 1px solid #deeae7;
       box-shadow: 0 6px 12px -8px rgba(0,0,0,0.05);
     }
     .skill-card:hover {
       transform: translateY(-6px);
-      border-color: #e8cdd7;
-      box-shadow: 0 22px 28px -18px rgba(110, 70, 80, 0.2);
+      border-color: #bdd6cf;
+      box-shadow: 0 22px 28px -18px rgba(70, 110, 100, 0.2);
     }
     .skill-icon {
       font-size: 3rem;
       margin-bottom: 16px;
-      color: #b4627a;
+      color: #5f9b8b;
     }
     .skill-card h4 {
       font-size: 1.2rem;
       font-weight: 600;
       margin-bottom: 6px;
+      color: #2a4a4a;
     }
     .skill-card p {
       font-size: 0.8rem;
-      color: #6f5a64;
+      color: #6b8b83;
     }
 
     /* ===== ПРОЕКТЫ ===== */
     .projects-section {
       padding: 80px 0;
-      background: #fef8fa;
+      background: #f5faf8;
     }
     .projects-grid {
       display: grid;
@@ -232,12 +233,12 @@
       overflow: hidden;
       transition: all 0.35s;
       box-shadow: 0 12px 24px -14px rgba(0,0,0,0.08);
-      border: 1px solid #f1dfe6;
+      border: 1px solid #e2f0ec;
     }
     .project-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 30px 35px -18px rgba(100, 60, 70, 0.2);
-      border-color: #d9b7c5;
+      box-shadow: 0 30px 35px -18px rgba(70, 110, 100, 0.2);
+      border-color: #c2dfd6;
     }
     .project-img {
       height: 220px;
@@ -259,16 +260,17 @@
       font-size: 1.6rem;
       margin-bottom: 12px;
       font-weight: 600;
+      color: #2a5a5a;
     }
     .project-info p {
-      color: #4f3f47;
+      color: #5e7e76;
       font-size: 0.9rem;
       margin-bottom: 20px;
     }
     .project-link {
       font-weight: 600;
       text-decoration: none;
-      color: #b4627a;
+      color: #5f9b8b;
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -277,13 +279,14 @@
     }
     .project-link:hover {
       gap: 12px;
-      border-bottom-color: #d48ba5;
+      border-bottom-color: #8bbcb0;
+      color: #368282;
     }
 
     /* ===== КОНТАКТЫ ===== */
     .contact-section {
       padding: 70px 0 90px;
-      background: #fffafc;
+      background: #eef6f3;
       text-align: center;
     }
     .contact-card {
@@ -292,22 +295,26 @@
       background: white;
       border-radius: 56px;
       padding: 48px 32px;
-      box-shadow: 0 30px 40px -20px rgba(120, 70, 80, 0.18);
-      border: 1px solid #f0dfe6;
+      box-shadow: 0 30px 40px -20px rgba(70, 110, 100, 0.18);
+      border: 1px solid #d9e9e4;
     }
     .contact-icon {
       font-size: 2.8rem;
-      color: #b4627a;
+      color: #5f9b8b;
       margin-bottom: 16px;
     }
     .contact-card h2 {
       font-size: 2rem;
       margin-bottom: 12px;
+      color: #1e4a4a;
+    }
+    .contact-card p {
+      color: #5e7e76;
     }
     .email-big {
       font-size: 1.3rem;
       font-weight: 500;
-      background: #fef2f6;
+      background: #f0f9f6;
       display: inline-block;
       padding: 12px 32px;
       border-radius: 80px;
@@ -315,9 +322,12 @@
       word-break: break-all;
     }
     .email-big a {
-      color: #b4627a;
+      color: #4a9d9d;
       text-decoration: none;
       font-weight: 600;
+    }
+    .email-big a:hover {
+      color: #2c7a7a;
     }
     .social-row {
       display: flex;
@@ -326,19 +336,19 @@
       margin-top: 28px;
     }
     .social-row a {
-      color: #a56a81;
+      color: #7fa89e;
       font-size: 1.7rem;
       transition: 0.2s;
     }
     .social-row a:hover {
-      color: #b4627a;
+      color: #4a9d9d;
       transform: scale(1.05);
     }
 
     /* ===== ФУТЕР ===== */
     .footer {
-      background: #1e1a1f;
-      color: #cab7c1;
+      background: #1e3a3a;
+      color: #bdd6cf;
       text-align: center;
       padding: 32px 20px;
       font-size: 0.85rem;
@@ -361,7 +371,7 @@
 </head>
 <body>
 
-  <!-- ГЛАВНЫЙ ЭКРАН -->
+  <!-- ГЛАВНЫЙ ЭКРАН с ВАШИМ ФОТО imagem_5 -->
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -374,7 +384,8 @@
         </div>
       </div>
       <div class="hero-visual">
-        <img src="https://images.pexels.com/photos/3768130/pexels-photo-3768130.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Рабочий процесс Ксении">
+        <!-- ВАШЕ ФОТО imagem_5.jfif -->
+        <img src="imagem_5.jfif" alt="Ксения Шинкарюк — веб-разработчик и дизайнер">
       </div>
     </div>
   </section>
