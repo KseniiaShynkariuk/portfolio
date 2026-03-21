@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>EcoBot 🌱 | Assistente de Hábitos Ecológicos</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -28,36 +28,7 @@
       padding: 40px 20px;
     }
 
-    /* Header */
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 48px;
-      margin-bottom: 40px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-
-    .hero-icon {
-      font-size: 5rem;
-      color: #2e7d32;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #1b5e2a;
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #2e7d32;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
+    /* Botão voltar */
     .btn-voltar {
       display: inline-flex;
       align-items: center;
@@ -77,11 +48,41 @@
       transform: translateX(-3px);
     }
 
-    /* Status do Bot */
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 50px 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 48px;
+      margin-bottom: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero-icon {
+      font-size: 4.5rem;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1b5e2a;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #2e7d32;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Status */
     .status-card {
       background: white;
       border-radius: 32px;
-      padding: 30px;
+      padding: 25px;
       text-align: center;
       margin-bottom: 40px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -96,7 +97,7 @@
       border-radius: 40px;
       color: #2e7d32;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .status-online i {
@@ -108,13 +109,13 @@
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-bottom: 60px;
+      gap: 25px;
+      margin-bottom: 40px;
     }
 
     .feature-card {
       background: white;
-      padding: 30px;
+      padding: 28px;
       border-radius: 32px;
       text-align: center;
       transition: all 0.3s;
@@ -127,62 +128,142 @@
     }
 
     .feature-icon {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       color: #2e7d32;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .feature-card h3 {
       font-size: 1.3rem;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: #1b5e2a;
     }
 
     .feature-card p {
       color: #558b2f;
       line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    /* Guia Passo a Passo */
+    .guide {
+      background: white;
+      border-radius: 32px;
+      padding: 35px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .guide h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1b5e2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .guide h2 i {
+      color: #2e7d32;
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 25px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 24px;
+      transition: all 0.3s;
+    }
+
+    .step:hover {
+      background: #f0f8f0;
+      transform: translateX(5px);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      background: #2e7d32;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #1b5e2a;
+    }
+
+    .step-content p {
+      color: #558b2f;
+      line-height: 1.5;
+    }
+
+    .step-content code {
+      background: #e8f5e9;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-family: monospace;
+      color: #2e7d32;
+      font-weight: 600;
     }
 
     /* Comandos */
     .commands {
       background: white;
       border-radius: 32px;
-      padding: 40px;
+      padding: 35px;
       margin-bottom: 40px;
     }
 
     .commands h2 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       color: #1b5e2a;
     }
 
     .commands-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+      gap: 12px;
     }
 
     .command {
       background: #f5f5f5;
-      padding: 12px 20px;
+      padding: 12px 18px;
       border-radius: 60px;
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     .command-code {
       background: #2e7d32;
       color: white;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: 40px;
       font-weight: 600;
       font-family: monospace;
+      font-size: 0.85rem;
     }
 
     .command-desc {
       color: #1b5e2a;
+      font-size: 0.9rem;
     }
 
     /* Como Adicionar */
@@ -200,7 +281,7 @@
     }
 
     .howto p {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       opacity: 0.9;
     }
 
@@ -215,6 +296,7 @@
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s;
+      margin-top: 15px;
     }
 
     .btn-convidar:hover {
@@ -225,102 +307,181 @@
     /* Footer */
     .footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px 20px;
       color: #558b2f;
     }
 
     @media (max-width: 700px) {
-      h1 { font-size: 2rem; }
-      .hero { padding: 40px 20px; }
-      .commands-grid { grid-template-columns: 1fr; }
+      .container {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .hero {
+        padding: 30px 20px;
+      }
+      .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .step-number {
+        margin-bottom: 10px;
+      }
+      .command {
+        justify-content: center;
+      }
+      .commands-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="index.html" class="btn-voltar">
-      <i class="fas fa-arrow-left"></i> Voltar ao Portfólio
-    </a>
+<div class="container">
+  <a href="index.html" class="btn-voltar">
+    <i class="fas fa-arrow-left"></i> Voltar ao Portfólio
+  </a>
 
-    <div class="hero">
-      <div class="hero-icon">
-        <i class="fas fa-leaf"></i>
-      </div>
-      <h1>🌱 EcoBot</h1>
-      <p>O seu assistente pessoal para uma vida mais sustentável! Registre ações ecológicas, ganhe pontos, receba dicas e inspire outros.</p>
+  <div class="hero">
+    <div class="hero-icon"><i class="fas fa-leaf"></i></div>
+    <h1>🌱 EcoBot</h1>
+    <p>O seu assistente pessoal para uma vida mais sustentável! Registre ações ecológicas, ganhe pontos, receba dicas e inspire outros.</p>
+  </div>
+
+  <div class="status-card">
+    <div class="status-online">
+      <i class="fas fa-circle"></i> Bot Online
     </div>
+    <p style="color: #2e7d32;">O EcoBot está ativo 24/7! Adicione-o ao seu servidor do Discord e comece a cuidar do planeta.</p>
+  </div>
 
-    <div class="status-card">
-      <div class="status-online">
-        <i class="fas fa-circle"></i> Bot Online
-      </div>
-      <p style="color: #2e7d32;">O EcoBot está ativo 24/7! Adicione-o ao seu servidor do Discord e comece a cuidar do planeta.</p>
-    </div>
-
-    <div class="features">
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-recycle"></i></div>
-        <h3>Registre Ações</h3>
-        <p>Registre atividades ecológicas como reciclagem, poupança de água, transporte sustentável e muito mais.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>Ganhe Pontos</h3>
-        <p>Cada ação vale pontos. Quanto mais faz pelo planeta, mais pontos acumula!</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-trophy"></i></div>
-        <h3>Ranking</h3>
-        <p>Compare o seu progresso com outros utilizadores e inspire a comunidade.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-bell"></i></div>
-        <h3>Lembretes</h3>
-        <p>Configure lembretes diários para não esquecer de registar as suas ações.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
-        <h3>Dicas Eco</h3>
-        <p>Receba dicas e curiosidades sobre sustentabilidade para aprender mais.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fas fa-chart-simple"></i></div>
-        <h3>Estatísticas</h3>
-        <p>Veja o seu histórico de ações e acompanhe a sua evolução.</p>
+  <!-- GUIA PASSO A PASSO NOVO -->
+  <div class="guide">
+    <h2><i class="fas fa-compass"></i> Guia Passo a Passo</h2>
+    
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>📥 Convidar o bot</h3>
+        <p>Clique no botão <strong>"Convidar EcoBot"</strong> abaixo. Será aberta uma página do Discord.</p>
       </div>
     </div>
 
-    <div class="commands">
-      <h2>📋 Comandos Disponíveis</h2>
-      <div class="commands-grid">
-        <div class="command"><span class="command-code">!iniciar</span><span class="command-desc">Iniciar o bot</span></div>
-        <div class="command"><span class="command-code">!ajuda</span><span class="command-desc">Ver todos os comandos</span></div>
-        <div class="command"><span class="command-code">!dica</span><span class="command-desc">Receber dica ecológica</span></div>
-        <div class="command"><span class="command-code">!curiosidade</span><span class="command-desc">Curiosidade sobre sustentabilidade</span></div>
-        <div class="command"><span class="command-code">!registrar</span><span class="command-desc">Registrar ação ecológica</span></div>
-        <div class="command"><span class="command-code">!pontos</span><span class="command-desc">Ver os seus pontos</span></div>
-        <div class="command"><span class="command-code">!ranking</span><span class="command-desc">Ranking de utilizadores</span></div>
-        <div class="command"><span class="command-code">!lembrete</span><span class="command-desc">Ativar/desativar lembretes</span></div>
-        <div class="command"><span class="command-code">!status</span><span class="command-desc">Ver estado do perfil</span></div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>🎯 Selecionar o servidor</h3>
+        <p>Escolha o servidor do Discord onde quer adicionar o bot (precisa ter permissão de "Gerenciar Servidor").</p>
       </div>
     </div>
 
-    <div class="howto">
-      <h2>🤖 Como Adicionar o EcoBot ao seu Servidor</h2>
-      <p>1. Clique no botão abaixo para convidar o bot</p>
-      <p>2. Selecione o servidor onde quer adicionar</p>
-      <p>3. Autorize as permissões</p>
-      <p>4. Use <code style="background:rgba(255,255,255,0.2); padding:4px 8px; border-radius:8px;">!iniciar</code> no chat para começar!</p>
-      <br>
-      <a href="https://discord.com/api/oauth2/authorize?client_id=1484823990030565396&permissions=3072&scope=bot" class="btn-convidar" target="_blank">
-        <i class="fab fa-discord"></i> Convidar EcoBot
-      </a>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>✅ Autorizar permissões</h3>
+        <p>Clique em <strong>"Autorizar"</strong>. O bot vai pedir permissões para ler e enviar mensagens.</p>
+      </div>
     </div>
 
-    <div class="footer">
-      <p>🌱 EcoBot - Pequenas ações, grandes mudanças!</p>
-      <p style="margin-top: 10px; font-size: 0.8rem;">Desenvolvido com 💚 para um planeta mais sustentável</p>
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>💬 Abrir o Discord</h3>
+        <p>Abra o aplicativo do Discord no computador ou telemóvel e entre no servidor onde adicionou o bot.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h3>📝 Ir ao chat do servidor</h3>
+        <p>Vá para um canal de texto (ex: #geral, #bem-vindo, #comandos).</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <h3>🚀 Iniciar o bot</h3>
+        <p>Digite o comando <code>!iniciar</code> no chat e pressione ENTER. O bot vai responder e registar o seu perfil!</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-number">7</div>
+      <div class="step-content">
+        <h3>🌿 Começar a usar!</h3>
+        <p>Experimente outros comandos como <code>!dica</code>, <code>!registrar</code> e <code>!pontos</code>. Veja a lista completa abaixo.</p>
+      </div>
     </div>
   </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-recycle"></i></div>
+      <h3>Registre Ações</h3>
+      <p>Reciclagem, poupança de água, transporte sustentável e muito mais.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+      <h3>Ganhe Pontos</h3>
+      <p>Cada ação vale pontos. Quanto mais faz pelo planeta, mais pontos acumula!</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+      <h3>Ranking</h3>
+      <p>Compare o seu progresso com outros utilizadores e inspire a comunidade.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-bell"></i></div>
+      <h3>Lembretes</h3>
+      <p>Configure lembretes diários para não esquecer de registar as suas ações.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+      <h3>Dicas Eco</h3>
+      <p>Receba dicas e curiosidades sobre sustentabilidade para aprender mais.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon"><i class="fas fa-chart-simple"></i></div>
+      <h3>Estatísticas</h3>
+      <p>Veja o seu histórico de ações e acompanhe a sua evolução.</p>
+    </div>
+  </div>
+
+  <div class="commands">
+    <h2>📋 Comandos Disponíveis</h2>
+    <div class="commands-grid">
+      <div class="command"><span class="command-code">!iniciar</span><span class="command-desc">Iniciar o bot</span></div>
+      <div class="command"><span class="command-code">!ajuda</span><span class="command-desc">Ver todos os comandos</span></div>
+      <div class="command"><span class="command-code">!dica</span><span class="command-desc">Receber dica ecológica</span></div>
+      <div class="command"><span class="command-code">!curiosidade</span><span class="command-desc">Curiosidade sobre sustentabilidade</span></div>
+      <div class="command"><span class="command-code">!registrar</span><span class="command-desc">Registrar ação ecológica</span></div>
+      <div class="command"><span class="command-code">!pontos</span><span class="command-desc">Ver os seus pontos</span></div>
+      <div class="command"><span class="command-code">!ranking</span><span class="command-desc">Ranking de utilizadores</span></div>
+      <div class="command"><span class="command-code">!lembrete</span><span class="command-desc">Ativar/desativar lembretes</span></div>
+      <div class="command"><span class="command-code">!status</span><span class="command-desc">Ver estado do perfil</span></div>
+    </div>
+  </div>
+
+  <div class="howto">
+    <h2>🤖 Adicionar o EcoBot ao seu Servidor</h2>
+    <p>1. Clique no botão abaixo para convidar o bot</p>
+    <p>2. Selecione o servidor onde quer adicionar</p>
+    <p>3. Autorize as permissões</p>
+    <p>4. Abra o Discord e vá ao servidor</p>
+    <p>5. No chat, digite <code style="background:rgba(255,255,255,0.2); padding:4px 10px; border-radius:20px;">!iniciar</code> para começar!</p>
+    <a href="https://discord.com/api/oauth2/authorize?client_id=1484823990030565396&permissions=3072&scope=bot" class="btn-convidar" target="_blank">
+      <i class="fab fa-discord"></i> Convidar EcoBot
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>🌱 EcoBot - Pequenas ações, grandes mudanças!</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;">Desenvolvido com 💚 para um planeta mais sustentável</p>
+  </div>
+</div>
 </body>
 </html>
