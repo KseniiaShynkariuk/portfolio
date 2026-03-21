@@ -426,7 +426,7 @@
           </div>
         </div>
 
-        <!-- Projeto 2: To-Do App - LINK CORRIGIDO -->
+        <!-- Projeto 2: To-Do App -->
         <div class="project-card">
           <div class="project-img">
             <img src="https://images.pexels.com/photos/4065892/pexels-photo-4065892.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Aplicativo de tarefas">
@@ -438,15 +438,15 @@
           </div>
         </div>
 
-        <!-- Projeto 3: Telegram Bot -->
+        <!-- Projeto 3: EcoBot (Discord) -->
         <div class="project-card">
           <div class="project-img">
-            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Projeto Python">
+            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800" alt="EcoBot - Bot do Discord">
           </div>
           <div class="project-info">
-            <h3>EcoBot</h3>
-            <p>Bot do Telegram para hábitos ecológicos (Python + aiogram). Lembretes, rastreamento e dicas úteis.</p>
-            <a href="#" class="project-link" id="pythonDemoLink">Saiba mais →</a>
+            <h3>🌱 EcoBot</h3>
+            <p>Bot do Discord para hábitos ecológicos. Registre ações, ganhe pontos, receba dicas e inspire outros!</p>
+            <a href="ecobot.html" class="project-link" target="_blank">Conhecer o bot →</a>
           </div>
         </div>
       </div>
@@ -481,16 +481,6 @@
   </footer>
 
   <script>
-    // Apenas para o bot do Python (demo)
-    const pythonLink = document.getElementById('pythonDemoLink');
-    
-    if(pythonLink) {
-      pythonLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert('🤖 O código do bot Python para o EcoBot pode ser compartilhado sob solicitação. Escreva para mim e envio o repositório!');
-      });
-    }
-
     // scroll suave para links âncora
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
